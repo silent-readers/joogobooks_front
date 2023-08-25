@@ -111,12 +111,12 @@ li {
 }
 
 .signup li:first-child {
-  width: 115px;
+  width: 120px;
   padding: 6px 0 0 0;
 }
 
 .signup li input {
-  width: 300px;
+  width: 280px;
   height: 33px;
   background-color: #d5dddfd2;
   border: none;
