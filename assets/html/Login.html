@@ -4,8 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <link rel="stylesheet" href="../css/Login.css" />
+    <title>로그인 화면</title>
   </head>
 
-  <body></body>
+  <body>
+    <header class="navbar">
+      <nav>
+        <div class="nav-container">
+          <img class="book" src="../img/books.png" alt="logo" />
+          <div class="menu-container">
+            <ul class="menu">
+              <li><a href="./assets/html/Login.html">Login</a></li>
+              <li><a href="./assets/html/Sign Up.html">Sign Up</a></li>
+            </ul>
+            <ul class="menu2">
+              <li><a href="./assets/html/Home.html">Home</a></li>
+              <li><a href="./assets/html/Shop.html">Shop</a></li>
+              <li><a href="./assets/html/Search.html">Search</a></li>
+              <li><a href="./assets/html/Chat.html">Chat</a></li>
+              <li><a href="./assets/html/About Us.html">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form>
+        <div class="form-group">
+          <div class="ID">
+            <label for="ID">ID</label>
+            <input type="text" id="ID" name="ID" placeholder="아이디" required>
+          </div>
+          <div class="PW">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="비밀번호" required>
+          </div>
+          <div class="button-container">
+            <button type="submit">Login</button>
+          </div>
+          <div class="question">
+            <div class="question-sign">
+              <h4>아직 회원가입 전이신가요? <a href="../html/Sign Up.html">  회원가입하기</a></h4>
+            </div>
+            <div class="question-pw"></div>
+              <h4>비밀번호를 잊어버리셨나요? <a href="../html/Password.html">  비밀번호찾기</a></h4>
+            </div>
+        </div>
+          
+        </div>
+    <footer class="footer">
+      <p>&copy; 2023, joongo-readers. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
