@@ -54,6 +54,31 @@ body {
   color: white;
 }
 
+@media screen and (max-width: 768px) {
+  .menu,
+  .menu2 {
+    display: none;
+  }
+  .dropdown-menu a {
+    text-decoration: none;
+    color: white;
+  }
+  .dropdown-menu {
+    display: block;
+    list-style: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .menu,
+  .menu2 {
+    display: flex-end;
+  }
+  .dropdown-menu {
+    display: none;
+  }
+}
+
 .login-container {
   display: flex;
   justify-content: center;
