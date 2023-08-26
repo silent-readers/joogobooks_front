@@ -54,6 +54,14 @@ body {
   color: white;
 }
 
+.menu a:hover {
+  color: #3344ff;
+}
+
+.menu2 a:hover {
+  color: #3344ff;
+}
+
 @media screen and (max-width: 768px) {
   .menu,
   .menu2 {
