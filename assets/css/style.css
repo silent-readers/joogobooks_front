@@ -118,6 +118,11 @@ body {
   border: none;
   padding: 0;
   cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.enter-button:hover {
+  transform: scale(1.1);
 }
 
 .enter-button img {
