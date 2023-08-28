@@ -82,6 +82,7 @@ body {
     display: none;
   }
   .dropdown-menu a {
+    font-size: 12px;
     text-decoration: none;
     color: white;
   }
@@ -91,6 +92,22 @@ body {
   }
   .dropdown-menu a:hover {
     color: #3344ff;
+  }
+  .profile,
+  .purchase-history {
+    display: none;
+  }
+  .side-dropdown-menu a {
+    font-size: 12px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+  .side-dropdown-menu {
+    display: block;
+    list-style: none;
+  }
+  .side-dropdown-menu a:hover {
+    color: #ff5733;
   }
 }
 
@@ -102,6 +119,16 @@ body {
   .dropdown-menu {
     display: none;
   }
+  .profile,
+  .purchase-history {
+    display: flex-end;
+  }
+  .side-menu {
+    border-right: 2px solid #449fb1;
+  }
+  .side-dropdown-menu {
+    display: none;
+  }
 }
 
 .h2 {
@@ -110,15 +137,21 @@ body {
 }
 
 .side-menu {
+  position: fixed;
+  top: 21vh;
+  left: 0;
   color: #000000;
+  height: 50%;
   width: 250px;
   margin-top: 10vh;
   margin-left: 20px;
-  border-right: 2px solid #449fb1;
+  padding: 10px;
+  transition: none;
+  z-index: 1000;
 }
 
-.side-menu.active {
-  left: 0;
+.side-menu.open {
+  left: -300px;
 }
 
 .menu-list {
@@ -142,17 +175,15 @@ body {
   color: #ff5733;
 }
 
-.profile {
+.user-profile {
   display: flex;
   align-items: center;
-  margin-left: 18%;
   flex-direction: column;
-  margin-top: -27vh;
+  margin-left: 18%;
 }
 
-.profile img {
+.user-profile img {
   width: 20%;
-  margin-left: 0;
 }
 
 .userinfo {
@@ -174,10 +205,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: 30vh;
   padding: 20px;
   flex-direction: column;
-  margin-top: -20vh;
   margin-left: 18%;
   gap: 30px;
 }
@@ -187,6 +217,10 @@ li {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.present {
+  font-weight: bold;
 }
 
 .form-group ul {
