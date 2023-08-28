@@ -89,6 +89,9 @@ body {
     display: block;
     list-style: none;
   }
+  .dropdown-menu a:hover {
+    color: #3344ff;
+  }
 }
 
 @media screen and (min-width: 769px) {
