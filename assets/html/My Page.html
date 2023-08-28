@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/My Page.css" />
+    <title>My Page</title>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <nav>
+        <div class="nav-container">
+          <img class="book" src="../img/books.png" alt="logo" />
+          <div class="menu-container">
+            <ul class="menu">
+              <li><img class="user" src="../img/user.png" alt="user" /></li>
+              <ul class="menu1">
+                <li>[별명]님, 환영합니다.</li>
+                <li><a href="../html/My Page.html">My Page</a></li>
+                <li><a href="../html/Home.html">Logout</a></li>
+              </ul>
+            </ul>
+            <ul class="menu2">
+              <li><a href="../html/Home.html">Home</a></li>
+              <li><a href="../html/Shop.html">Shop</a></li>
+              <li><a href="../html/Search.html">Search</a></li>
+              <li><a href="../html/Chat.html">Chat</a></li>
+              <li><a href="../html/About Us.html">About Us</a></li>
+            </ul>
+            <ul class="dropdown-menu">
+              <li><a href="../html/Login.html">Login</a></li>
+              <li><a href="../html/Sign Up.html">Sign Up</a></li>
+              <li><a href="../html/Home.html">Home</a></li>
+              <li><a href="../html/Shop.html">Shop</a></li>
+              <li><a href="../html/Search.html">Search</a></li>
+              <li><a href="../html/Chat.html">Chat</a></li>
+              <li><a href="../html/About Us.html">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="side-menu">
+      <h2>Profile</h2>
+      <ul class="menu-list">
+        <li><a href="../html/My Page.html">Profile 설정</a></li>
+        <li><a href="../html/Change Password.html">비밀번호 변경</a></li>
+      </ul>
+      <h2>Purchase History</h2>
+      <ul class="menu-list">
+        <li><a href="../html/Purchase History.html">구매목록</a></li>
+        <li><a href="../html/Chat History.html">채팅 History</a></li>
+      </ul>
+    </div>
+    <div class="profile">
+      <img class="profile img" src="../img/user.png" alt="profile" />
+      <div class="userinfo">
+        <h2 class="username">UserName</h2>
+        <h4 class="email">user1234@gmail.com</h4>
+      </div>
+    </div>
+    <form class="profile-container">
+      <div class="form-group">
+        <ul>
+          <li>nickname</li>
+          <li>
+            <input
+              type="text"
+              id="nickname"
+              name="nickname"
+              placeholder="  닉네임"
+              required
+            />
+          </li>
+        </ul>
+        <ul>
+          <li>About Me</li>
+          <li>
+            <input
+              type="About Me"
+              id="About Me"
+              name="About Me"
+              placeholder="  본인 정보"
+              required
+            />
+          </li>
+        </ul>
+        <button type="submit">프로필 변경</button>
+      </div>
+    </form>
+    <footer class="footer">
+      <p>&copy; 2023, joongo-readers. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -26,22 +26,30 @@ body {
   max-height: 70px;
 }
 
+.user {
+  width: 40px;
+}
+
 .menu-container {
   display: flex-end;
   align-items: center;
 }
 
 .menu,
+.menu1,
 .menu2 {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-.menu {
-  justify-content: flex-end;
-  margin-bottom: 10px;
-  font-size: 14px;
+.menu1 {
+  font-size: 12.5px;
+  margin-top: 8px;
+}
+
+.menu2 {
+  margin-top: 10px;
 }
 
 .menu a {

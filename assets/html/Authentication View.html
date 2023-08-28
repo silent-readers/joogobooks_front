@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/Login.css" />
-    <title>로그인 화면</title>
+    <link rel="stylesheet" href="../css/Authentication View.css" />
+    <title>메인 화면</title>
   </head>
 
   <body>
@@ -15,8 +15,12 @@
           <img class="book" src="../img/books.png" alt="logo" />
           <div class="menu-container">
             <ul class="menu">
-              <li><a href="../html/Login.html">Login</a></li>
-              <li><a href="../html/Sign Up.html">Sign Up</a></li>
+              <li><img class="user" src="../img/user.png" alt="user" /></li>
+              <ul class="menu1">
+                <li>[별명]님, 환영합니다.</li>
+                <li><a href="../html/My Page.html">My Page</a></li>
+                <li><a href="../html/Home.html">Logout</a></li>
+              </ul>
             </ul>
             <ul class="menu2">
               <li><a href="../html/Home.html">Home</a></li>
@@ -38,29 +42,12 @@
         </div>
       </nav>
     </header>
-    <div class="login-container">
-      <h2>Login</h2>
-      <form>
-        <div class="form-group">
-          <ul>
-            <li>ID</li>
-            <li><input type="text" id="ID" name="ID" placeholder="  아이디" required></li>
-          </ul>
-          <ul>
-            <li>Password</li>
-            <li><input type="password" id="password" name="password" placeholder="  비밀번호" required></li>
-          </ul>
-          <button type="submit">Login</button>
-          <div class="question">
-            <div class="question-sign">
-              <h4>아직 회원가입 전이신가요? <a href="../html/Sign Up.html">  회원가입하기</a></h4>
-            </div>
-            <div class="question-pw"></div>
-              <h4>비밀번호를 잊어버리셨나요? <a href="../html/Password.html">  비밀번호찾기</a></h4>
-            </div>
-        </div>
-          
-        </div>
+    <section class="main-content">
+      <div class="welcome-container">
+        <img class="welcome" src="../img/welcome.jpg" alt="welcome" />
+        <button class="enter-button">입장하기</button>
+      </div>
+    </section>
     <footer class="footer">
       <p>&copy; 2023, joongo-readers. All rights reserved.</p>
     </footer>
