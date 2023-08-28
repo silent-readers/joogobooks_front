@@ -111,12 +111,15 @@ body {
 }
 
 .enter-button {
-  background-color: #449fb1;
-  color: white;
+  background-color: white;
   border: none;
-  padding: 3vh 9vh;
-  font-size: 50px;
+  padding: 0;
   cursor: pointer;
+}
+
+.enter-button img {
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
