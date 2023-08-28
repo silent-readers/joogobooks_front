@@ -181,43 +181,6 @@ body {
   color: #ff5733;
 }
 
-.user-profile {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-left: 18%;
-}
-
-.user-profile img {
-  width: 20%;
-}
-
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.username {
-  font-size: 40px;
-  margin-bottom: 6px;
-}
-
-.email {
-  font-size: 15px;
-}
-
-.profile-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30vh;
-  padding: 20px;
-  flex-direction: column;
-  margin-left: 18%;
-  gap: 30px;
-}
-
 ul,
 li {
   margin: 0;
