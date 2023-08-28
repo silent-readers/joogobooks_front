@@ -49,8 +49,13 @@ body {
   margin-top: 8px;
 }
 
+.menu1-1 {
+  margin-left: 25px;
+}
+
 .menu2 {
   margin-top: 10px;
+  font-size: 18px;
 }
 
 .menu a {
