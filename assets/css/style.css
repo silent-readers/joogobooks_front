@@ -26,12 +26,17 @@ body {
   max-height: 70px;
 }
 
+.user {
+  width: 40px;
+}
+
 .menu-container {
   display: flex-end;
   align-items: center;
 }
 
 .menu,
+.menu1,
 .menu2 {
   list-style: none;
   display: flex;
@@ -42,10 +47,33 @@ body {
   justify-content: flex-end;
   margin-bottom: 10px;
   font-size: 14px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu.before {
+  margin-bottom: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .menu a {
   text-decoration: none;
+  color: white;
+}
+
+.menu1 {
+  font-size: 12.5px;
+  margin-top: 8px;
+}
+
+.menu1-1 {
+  margin-left: 25px;
+}
+
+#logout-btn {
+  border: 0;
+  background-color:inherit;
   color: white;
 }
 
