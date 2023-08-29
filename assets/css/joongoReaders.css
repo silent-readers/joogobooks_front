@@ -188,19 +188,19 @@ body {
   font-weight: bold;
 }
 
-.joongoleaders {
+.joongoreaders {
   margin-left: 25%;
   margin-top: 2%;
 }
 
-.leaders {
+.readers {
   display: flex;
   align-items: center;
   margin-top: 3%;
   margin-left: 5%;
 }
 
-.leader {
+.reader {
   width: 50px;
   height: auto;
   margin-right: 3%;
@@ -210,7 +210,7 @@ body {
   flex: 1;
 }
 
-.leader-info {
+.reader-info {
   margin-left: 6%;
 }
 
