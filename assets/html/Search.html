@@ -4,8 +4,66 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <link rel="stylesheet" href="../css/Search.css" />
+    <title>Book Detail</title>
   </head>
 
-  <body></body>
+  <body>
+    <header class="navbar">
+      <nav>
+        <div class="nav-container">
+          <a href="../html/Home.html">
+            <img class="book" src="../img/books.png" alt="logo" />
+          </a>
+          <div class="menu-container">
+            <ul class="menu">
+              <li><img class="user" src="../img/user.png" alt="user" /></li>
+              <ul class="menu1">
+                <li>[별명]님, 환영합니다.</li>
+                <li><a href="../html/My Page.html">My Page</a></li>
+                <li><a href="../html/Home.html">Logout</a></li>
+              </ul>
+            </ul>
+            <ul class="menu2">
+              <li><a href="../html/Home.html">Home</a></li>
+              <li><a href="../html/Shop.html">Shop</a></li>
+              <li><a href="../html/Search.html">Search</a></li>
+              <li><a href="../html/Chat.html">Chat</a></li>
+              <li><a href="../html/About Us.html">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="search-container">
+      <h1>Search Books</h1>
+      <form>
+        <div class="header_searchGroup">
+          <div class="header_search">
+            <select
+              id="header_searchSelect"
+              class="header_searchSelect"
+              aria-label="판매 상태 선택"
+            >
+              <option value="status">판매중</option>
+              <option value="status">판매진행중</option>
+              <option value="status">판매완료</option>
+              <option value="status">전체</option>
+            </select>
+            <input
+              type="text"
+              class="header_searchInput"
+              placeholder="검색어를 입력하세요"
+            />
+            <button type="submit" class="search-button">
+              <img src="../img/search.png" alt="search" />
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <footer class="footer">
+      <p>&copy; 2023, joongo-readers. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
