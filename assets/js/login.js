@@ -1,5 +1,6 @@
 const btn_login = document.querySelector('.btn-login');
-btn_login.addEventListener('click', async function() {
+btn_login.addEventListener('click', async function(e) {
+    e.preventDefault();
 
     const loginData = {
         "username" : document.getElementById('id').value,
@@ -13,30 +14,26 @@ btn_login.addEventListener('click', async function() {
         method:'POST',
         body:JSON.stringify(loginData),
     })
-    .then((res) => console.log("response:", response))
-    .catch((err) => console.log("error:", err));
+    .then((res) => res.json())
+    .then((res) => {
+        console.log("response:", res.message)
 
-    // 로그인 성공 여부
-    // if (response.status === 200) {
-    //     const data = await response.json();
-    //     const access_token = data.token.access;
+        const access_token = res.token.access
+        localStorage.setItem('access_token', access_token)
 
-    //     // access token을 Authorization header에 추가하여 요청
-    //     const response = await fetch(`http://127.0.0.1:8000/api/user/auth/`, {
-    //         method: 'GET',
-    //         headers: {
-    //             'Authorization': `Bearer ${access_token}`,
-    //         },
-    //     });
+        const base64Url = access_token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+    
+        localStorage.setItem("payload", jsonPayload);
 
-    //     // 인증 성공 여부
-    //     if (response.status === 200) {
-    //         alert('로그인 인증에 성공했습니다.');
-    //     } else {
-    //         alert('로그인 인증에 실패했습니다.');
-    //     }
-    // } else {
-    //     alert('로그인에 실패했습니다.');
-    // };
+        window.location.replace('http://127.0.0.1:5500/')
+    })
+    .catch((err) => {
+        alert(res.status);
+        console.log(err);
+    });
 
 });
