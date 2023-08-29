@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/purchaseHistory.css" />
+    <title>purchase-history</title>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <nav>
+        <div class="nav-container">
+          <a href="../html/Home.html">
+            <img class="book" src="../img/books.png" alt="logo" />
+          </a>
+          <div class="menu-container">
+            <ul class="menu">
+              <li><img class="user" src="../img/user.png" alt="user" /></li>
+              <ul class="menu1">
+                <li>[별명]님, 환영합니다.</li>
+                <li><a href="../html/My Page.html">My Page</a></li>
+                <li><a href="../html/Home.html">Logout</a></li>
+              </ul>
+            </ul>
+            <ul class="menu2">
+              <li><a href="../html/Home.html">Home</a></li>
+              <li><a href="../html/Shop.html">Shop</a></li>
+              <li><a href="../html/Search.html">Search</a></li>
+              <li><a href="../html/Chat.html">Chat</a></li>
+              <li><a href="../html/About Us.html">About Us</a></li>
+            </ul>
+            <ul class="dropdown-menu">
+              <li><a href="../html/Login.html">Login</a></li>
+              <li><a href="../html/Sign Up.html">Sign Up</a></li>
+              <li><a href="../html/Home.html">Home</a></li>
+              <li><a href="../html/Shop.html">Shop</a></li>
+              <li><a href="../html/Search.html">Search</a></li>
+              <li><a href="../html/Chat.html">Chat</a></li>
+              <li><a href="../html/About Us.html">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="side-menu">
+      <ul class="profile">
+        <h2>Profile</h2>
+        <ul class="menu-list">
+          <li><a href="./My Page.html">Profile 설정</a></li>
+          <li>
+            <a href="./Change Password.html">비밀번호 변경</a>
+          </li>
+        </ul>
+      </ul>
+      <ul class="purchase-history">
+        <h2>Purchase History</h2>
+        <ul class="menu-list">
+          <li class="present"><a href="./Purchase History.html">구매목록</a></li>
+          <li><a href="./Chat History.html">채팅 History</a></li>
+        </ul>
+      </ul>
+      <ul class="side-dropdown-menu">
+        <h4>Profile</h4>
+        <li><a href="./Home.html">Profile 설정</a></li>
+        <li><a href="../html/Home.html">비밀번호 변경</a></li>
+        <h4>Purchase History</h4>
+        <li class="present"><a href="../html/Search.html">구매목록</a></li>
+        <li><a href="./Chat History.html">채팅 History</a></li>
+      </ul>
+    </div>
+    <section class="purchase">
+      <div class="container">
+          <h2>Purchase History</h2>
+          <div class="filter-buttons">
+            <button><a href="#">전체</button>
+            <button><a href="#">구매진행중</button>
+            <button><a href="#">구매완료</button>
+          </div>
+        <div class="page_wrap">
+          <div class="page_nation">
+            <a class="arrow pprev" href="#"></a>
+            <a class="arrow prev" href="#"></a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a class="arrow next" href="#"></a>
+            <a class="arrow nnext" href="#"></a>
+          </div>
+        </div>
+
+        <div class="book-list">
+          <div class="book">
+            <input type="checkbox" class="checkbox" placeholder="체크박스">
+            <img src="../img/book-cover.png" alt="Book Cover" /> 
+            <div class="book-details">
+              <p class="book-name">Django - 처음부터 배우는 Django Frame Work</p>
+              <ul class="book-info">
+                <li class="book2">홍길동 저</li>
+                <li class="book2">오르미 북스</li>
+                <li>EST Soft</li>
+              </ul>
+              <ul class="book-status">
+                <li class="book3">상태 : 최상</li>
+                <li class="book3">원가 : 29000원</li>
+                <li>판매가 : 15000원</li>
+              </ul>
+            </div>
+              <ul class="info">
+                <li>구매진행중</li>
+                <li class="saler">판매자 : [별명]</li>
+              </ul>
+              <button class="check-item"><a href="#">상품 확인하기</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <p>&copy; 2023, joongo-readers. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
