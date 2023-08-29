@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/Shop.css" />
-    <title>Shop</title>
+    <link rel="stylesheet" href="../css/Purchase History.css" />
+    <title>purchase-history</title>
   </head>
 
   <body>
@@ -31,35 +31,66 @@
               <li><a href="../html/Chat.html">Chat</a></li>
               <li><a href="../html/About Us.html">About Us</a></li>
             </ul>
+            <ul class="dropdown-menu">
+              <li><a href="../html/Login.html">Login</a></li>
+              <li><a href="../html/Sign Up.html">Sign Up</a></li>
+              <li><a href="../html/Home.html">Home</a></li>
+              <li><a href="../html/Shop.html">Shop</a></li>
+              <li><a href="../html/Search.html">Search</a></li>
+              <li><a href="../html/Chat.html">Chat</a></li>
+              <li><a href="../html/About Us.html">About Us</a></li>
+            </ul>
           </div>
         </div>
       </nav>
     </header>
+    <div class="side-menu">
+      <ul class="profile">
+        <h2>Profile</h2>
+        <ul class="menu-list">
+          <li><a href="./My Page.html">Profile 설정</a></li>
+          <li>
+            <a href="./Change Password.html">비밀번호 변경</a>
+          </li>
+        </ul>
+      </ul>
+      <ul class="purchase-history">
+        <h2>Purchase History</h2>
+        <ul class="menu-list">
+          <li class="present"><a href="./Purchase History.html">구매목록</a></li>
+          <li><a href="./Chat History.html">채팅 History</a></li>
+        </ul>
+      </ul>
+      <ul class="side-dropdown-menu">
+        <h4>Profile</h4>
+        <li><a href="./Home.html">Profile 설정</a></li>
+        <li><a href="../html/Home.html">비밀번호 변경</a></li>
+        <h4>Purchase History</h4>
+        <li class="present"><a href="../html/Search.html">구매목록</a></li>
+        <li><a href="./Chat History.html">채팅 History</a></li>
+      </ul>
+    </div>
     <section class="purchase">
       <div class="container">
           <h2>Purchase History</h2>
-          <div class="buttons">
-            <div class="filter-buttons">
-              <button><a href="#">전체</button>
-              <button><a href="#">판매중</button>
-              <button><a href="#">판매진행중</button>
-              <button><a href="#">판매완료</button>
-            </div>
-            <div class="page_wrap">
-              <div class="page_nation">
-                <a class="arrow pprev" href="#"></a>
-                <a class="arrow prev" href="#"></a>
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a class="arrow next" href="#"></a>
-                <a class="arrow nnext" href="#"></a>
-              </div>
-            </div>
-            <button class="update-item"><a href="#">상품 등록하기</a></button>
+          <div class="filter-buttons">
+            <button><a href="#">전체</button>
+            <button><a href="#">구매진행중</button>
+            <button><a href="#">구매완료</button>
           </div>
+        <div class="page_wrap">
+          <div class="page_nation">
+            <a class="arrow pprev" href="#"></a>
+            <a class="arrow prev" href="#"></a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a class="arrow next" href="#"></a>
+            <a class="arrow nnext" href="#"></a>
+          </div>
+        </div>
 
         <div class="book-list">
           <div class="book">
@@ -79,6 +110,7 @@
               </ul>
             </div>
               <ul class="info">
+                <li>구매진행중</li>
                 <li class="saler">판매자 : [별명]</li>
               </ul>
               <button class="check-item"><a href="#">상품 확인하기</a></button>

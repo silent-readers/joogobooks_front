@@ -49,6 +49,10 @@ body {
   color: white;
 }
 
+.menu2 {
+  font-size: 18px;
+}
+
 .menu2 a {
   text-decoration: none;
   color: white;
@@ -74,6 +78,9 @@ body {
   .dropdown-menu {
     display: block;
     list-style: none;
+  }
+  .dropdown-menu a:hover {
+    color: #3344ff;
   }
 }
 
@@ -107,12 +114,20 @@ body {
 }
 
 .enter-button {
-  background-color: #449fb1;
-  color: white;
+  background-color: white;
   border: none;
-  padding: 3vh 9vh;
-  font-size: 50px;
+  padding: 0;
   cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.enter-button:hover {
+  transform: scale(1.1);
+}
+
+.enter-button img {
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 

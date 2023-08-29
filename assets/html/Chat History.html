@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/My Page.css" />
-    <title>My Page</title>
+    <link rel="stylesheet" href="../css/Chat History.css" />
+    <title>Chat-History</title>
   </head>
 
   <body>
     <header class="navbar">
       <nav>
         <div class="nav-container">
-          <a href="../html/Authentication View.html">
+          <a href="../html/Home.html">
             <img class="book" src="../img/books.png" alt="logo" />
           </a>
           <div class="menu-container">
@@ -20,9 +20,7 @@
               <li><img class="user" src="../img/user.png" alt="user" /></li>
               <ul class="menu1">
                 <li>[별명]님, 환영합니다.</li>
-                <li class="menu1-1">
-                  <a href="../html/My Page.html">My Page</a>
-                </li>
+                <li><a href="../html/My Page.html">My Page</a></li>
                 <li><a href="../html/Home.html">Logout</a></li>
               </ul>
             </ul>
@@ -50,7 +48,7 @@
       <ul class="profile">
         <h2>Profile</h2>
         <ul class="menu-list">
-          <li class="present"><a href="./My Page.html">Profile 설정</a></li>
+          <li><a href="./My Page.html">Profile 설정</a></li>
           <li>
             <a href="./Change Password.html">비밀번호 변경</a>
           </li>
@@ -59,55 +57,43 @@
       <ul class="purchase-history">
         <h2>Purchase History</h2>
         <ul class="menu-list">
-          <li><a href="./Purchase History.html">구매목록</a></li>
-          <li><a href="./Chat.html">채팅 History</a></li>
+          <li>
+            <a href="./Purchase History.html">구매목록</a>
+          </li>
+          <li class="present">
+            <a href="./Chat History.html">채팅 History</a>
+          </li>
         </ul>
       </ul>
       <ul class="side-dropdown-menu">
         <h4>Profile</h4>
-        <li class="present"><a href="./Home.html">Profile 설정</a></li>
+        <li><a href="./Home.html">Profile 설정</a></li>
         <li><a href="../html/Home.html">비밀번호 변경</a></li>
         <h4>Purchase History</h4>
         <li><a href="../html/Search.html">구매목록</a></li>
-        <li><a href="../html/Chat.html">채팅 History</a></li>
+        <li class="present">
+          <a href="../html/Chat History.html">채팅 History</a>
+        </li>
       </ul>
     </div>
-    <div class="user-profile">
-      <img class="profile img" src="../img/user.png" alt="profile" />
-      <div class="userinfo">
-        <h2 class="username">UserName</h2>
-        <h4 class="email">user1234@gmail.com</h4>
+    <section>
+      <h2 class="title">Chat History</h2>
+      <div class="chat-container">
+        <img
+          src="../img/user.png"
+          alt="Profile Picture"
+          class="profile-image"
+        />
+        <div class="chat-details">
+          <div class="nickname">닉네임</div>
+          <div class="content">문의 주신 부분에 대한 답변 드립니다.</div>
+        </div>
+        <div class="chat-details2">
+          <div class="time">오전 10:40</div>
+          <div class="chat-count">5</div>
+        </div>
       </div>
-    </div>
-    <form class="profile-container">
-      <div class="form-group">
-        <ul>
-          <li>nickname</li>
-          <li>
-            <input
-              type="text"
-              id="nickname"
-              name="nickname"
-              placeholder="  닉네임"
-              required
-            />
-          </li>
-        </ul>
-        <ul>
-          <li>About Me</li>
-          <li>
-            <input
-              type="About Me"
-              id="About Me"
-              name="About Me"
-              placeholder="  본인 정보"
-              required
-            />
-          </li>
-        </ul>
-        <button type="submit">프로필 변경</button>
-      </div>
-    </form>
+    </section>
     <footer class="footer">
       <p>&copy; 2023, joongo-readers. All rights reserved.</p>
     </footer>

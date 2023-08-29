@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.navbar {
+  background-color: #449fb1;
+  color: white;
+  padding: 20px;
+  align-items: center;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.book {
+  max-height: 70px;
+}
+
+.user {
+  width: 40px;
+}
+
+.menu-container {
+  display: flex-end;
+  align-items: center;
+}
+
+.menu,
+.menu1,
+.menu2 {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu1 {
+  font-size: 12.5px;
+  margin-top: 8px;
+}
+
+.menu1-1 {
+  margin-left: 25px;
+}
+
+.menu2 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu2 a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu a:hover {
+  color: #3344ff;
+}
+
+.menu2 a:hover {
+  color: #3344ff;
+}
+
+.container {
+  padding: 20px;
+}
+
+.purchase {
+  margin-left: 15%;
+  align-items: center;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.buttons {
+  align-items: flex-start;
+}
+
+.filter-buttons button {
+  background-color: #f4f4f4;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.filter-buttons button a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 5px;
+}
+
+.filter-buttons button:hover {
+  background-color: #bbbcc2;
+}
+
+/* page_nation */
+.page_wrap {
+  display: inline-block;
+}
+
+.page_nation {
+  display: inline-block;
+}
+
+.page_nation .none {
+  display: none;
+}
+
+.page_nation a {
+  display: block;
+  margin: 0 3px;
+  float: left;
+  border: 1px solid #e6e6e6;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 13px;
+  color: #999999;
+  text-decoration: none;
+}
+
+.page_nation .arrow {
+  border: 1px solid #ccc;
+}
+
+.page_nation .pprev {
+  background: #f8f8f8 url("../img/page_pprev.png") no-repeat center center;
+  margin-left: 0;
+}
+
+.page_nation .prev {
+  background: #f8f8f8 url("../img/page_prev.png") no-repeat center center;
+  margin-right: 7px;
+}
+
+.page_nation .next {
+  background: #f8f8f8 url("../img/page_next.png") no-repeat center center;
+  margin-left: 7px;
+}
+
+.page_nation .nnext {
+  background: #f8f8f8 url("../img/page_nnext.png") no-repeat center center;
+  margin-right: 0;
+}
+
+.page_nation a.active {
+  background-color: #42454c;
+  color: #fff;
+  border: 1px solid #42454c;
+}
+
+.update-item {
+  position: absolute;
+  background-color: #449fb1;
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 35%;
+  text-align: right;
+  margin-top: -15px;
+}
+
+.update-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.update-item:hover {
+  background-color: #3344ff;
+}
+
+/* book */
+.book-list {
+  grid-template-rows: repeat(3, 1fr);
+  margin-top: 15px;
+  border-top: 1px solid black;
+}
+
+.book {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.book img {
+  max-width: 8%;
+  height: auto;
+  margin-left: 10px;
+}
+
+.book-details {
+  margin-left: 10px;
+}
+
+.book-info {
+  display: flex;
+  color: rgba(201, 158, 49, 0.765);
+}
+
+.book-status {
+  display: flex;
+}
+
+.book-info li {
+  list-style: none;
+  font-size: 12px;
+}
+
+.book-status li {
+  list-style: none;
+  font-size: 15px;
+}
+
+.info li {
+  list-style: none;
+  margin-left: 70px;
+}
+
+ul.book-info,
+ul.book-status,
+ul.info {
+  margin: 0;
+  padding: 0;
+}
+
+.book2 {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1.5px solid rgba(201, 158, 49, 0.765);
+}
+
+.book3 {
+  margin-right: 10px;
+}
+
+.saler {
+  margin-top: 5px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.check-item {
+  background-color: #449fb1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10%;
+}
+
+.check-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.check-item:hover {
+  background-color: #3344ff;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #449fb1;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
