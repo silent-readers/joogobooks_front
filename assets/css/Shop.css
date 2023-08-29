@@ -188,6 +188,7 @@ a:-webkit-any-link {
 
 .number_item {
   list-style: none;
+  margin-top: 35px;
 }
 
 .number_item::before {
@@ -228,17 +229,18 @@ a:-webkit-any-link {
 .book {
   display: flex;
   align-items: center;
-  margin-top: 30px;
 }
 
 .book img {
   max-width: 8%;
-  height: auto;
+  max-height: 90px;
   margin-left: 30px;
+  margin-top: 40px;
 }
 
 .book-details {
   margin-left: 40px;
+  margin-top: 35px;
 }
 
 .book-info {
@@ -265,6 +267,7 @@ a:-webkit-any-link {
 .info li {
   list-style: none;
   margin-left: 70px;
+  margin-top: 35px;
 }
 
 ul.book-info,
@@ -299,6 +302,7 @@ ul.info {
   cursor: pointer;
   font-size: 14px;
   margin-left: 10%;
+  margin-top: 35px;
 }
 
 .check-item a {
