@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/Searched View.css" />
+    <title>Searched View</title>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <nav>
+        <div class="nav-container">
+          <a href="../html/Home.html">
+            <img class="book" src="../img/books.png" alt="logo" />
+          </a>
+          <div class="menu-container">
+            <ul class="menu">
+              <li><img class="user" src="../img/user.png" alt="user" /></li>
+              <ul class="menu1">
+                <li>[별명]님, 환영합니다.</li>
+                <li><a href="../html/My Page.html">My Page</a></li>
+                <li><a href="../html/Home.html">Logout</a></li>
+              </ul>
+            </ul>
+            <ul class="menu2">
+              <li><a href="../html/Home.html">Home</a></li>
+              <li><a href="../html/Shop.html">Shop</a></li>
+              <li><a href="../html/Search.html">Search</a></li>
+              <li><a href="../html/Chat.html">Chat</a></li>
+              <li><a href="../html/About Us.html">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="search-container">
+      <h1>Search Books</h1>
+      <form>
+        <div class="header_searchGroup">
+          <div class="header_search">
+            <select
+              id="header_searchSelect"
+              class="header_searchSelect"
+              aria-label="판매 상태 선택"
+            >
+              <option value="status">판매중</option>
+              <option value="status">판매진행중</option>
+              <option value="status">판매완료</option>
+              <option value="status">전체</option>
+            </select>
+            <input
+              type="text"
+              class="header_searchInput"
+              placeholder="검색어를 입력하세요"
+            />
+            <button type="submit" class="search-button">
+              <img src="../img/search.png" alt="search" />
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <section class="purchase">
+        <div class="container">
+              <div class="page_wrap">
+                <div class="page_nation">
+                  <a class="arrow pprev" href="#"></a>
+                  <a class="arrow prev" href="#"></a>
+                  <a href="#" class="active">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#">5</a>
+                  <a class="arrow next" href="#"></a>
+                  <a class="arrow nnext" href="#"></a>
+                </div>
+              </div>
+            </div>
+  
+          <div class="book-list">
+            <div class="book">
+              <ul class="number_list">
+                <li class="number_item">판매중</li>
+              </ul>
+              <img src="../img/book-cover.png" alt="Book Cover" /> 
+              <div class="book-details">
+                <p class="book-name">Django - 처음부터 배우는 Django Frame Work</p>
+                <ul class="book-info">
+                  <li class="book2">홍길동 저</li>
+                  <li class="book2">오르미 북스</li>
+                  <li>EST Soft</li>
+                </ul>
+                <ul class="book-status">
+                  <li class="book3">상태 : 최상</li>
+                  <li class="book3">원가 : 29000원</li>
+                  <li>판매가 : 15000원</li>
+                </ul>
+                <div class="book-exp">
+                    <p>수많은 기업이나 팀에서 코딩을 필수 덕목으로 특히, 파이썬 언어를 사용할 수 있는 사람들을 우대할 정도로 파이썬의 인기는 나날이 높아지고 있다. 이는 파이썬이 난이도가 비교적 쉽고 활용 가능한 분야가 많기 때문이다. </p>
+                </div>
+              </div>
+                <ul class="info">
+                  <li class="saler">판매자 : [별명]</li>
+                </ul>
+                <button class="check-item"><a href="./Book Detail.html">상품 확인하기</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <footer class="footer">
+      <p>&copy; 2023, joongo-readers. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
