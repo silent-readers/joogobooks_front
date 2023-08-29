@@ -1,6 +1,8 @@
 const signup_btn = document.querySelector('.join-button');
 
-signup_btn.addEventListener('click', () => {
+signup_btn.addEventListener('click', (e) => {
+    e.preventDefault();
+
     let password = "";
     const pwd1 = document.getElementById('password').value;
     const pwd2 = document.getElementById('confirm-password').value;
