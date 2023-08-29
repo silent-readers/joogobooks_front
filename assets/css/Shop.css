@@ -76,6 +76,20 @@ body {
   color: #3344ff;
 }
 
+@media screen and (max-width: 768px) {
+  .menu,
+  .menu2 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .menu,
+  .menu2 {
+    display: flex-end;
+  }
+}
+
 .container {
   padding: 20px;
 }
@@ -172,6 +186,15 @@ a:-webkit-any-link {
   border: 1px solid #42454c;
 }
 
+.number_item {
+  list-style: none;
+}
+
+.number_item::before {
+  counter-increment: number 1;
+  content: " " counter(number) " ";
+}
+
 .update-item {
   position: absolute;
   background-color: #449fb1;
@@ -181,7 +204,7 @@ a:-webkit-any-link {
   border-radius: 5px;
   cursor: pointer;
   font-size: 12px;
-  margin-left: 35%;
+  margin-left: 45%;
   text-align: right;
   margin-top: -15px;
 }
@@ -211,11 +234,11 @@ a:-webkit-any-link {
 .book img {
   max-width: 8%;
   height: auto;
-  margin-left: 10px;
+  margin-left: 30px;
 }
 
 .book-details {
-  margin-left: 10px;
+  margin-left: 40px;
 }
 
 .book-info {
@@ -230,11 +253,13 @@ a:-webkit-any-link {
 .book-info li {
   list-style: none;
   font-size: 12px;
+  margin-top: 5px;
 }
 
 .book-status li {
   list-style: none;
   font-size: 15px;
+  margin-top: 5px;
 }
 
 .info li {
@@ -261,7 +286,7 @@ ul.info {
 
 .saler {
   margin-top: 5px;
-  font-size: 10px;
+  font-size: 13px;
   text-align: center;
 }
 
