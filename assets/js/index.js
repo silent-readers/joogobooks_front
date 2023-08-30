@@ -16,7 +16,7 @@ if (!parsed_payload) {
         <li><img class="user" src="../assets/img/user.png" alt="user"></li>
         <ul class="menu1">
             <li>[별명]님, 환영합니다.</li>
-            <li class="menu1-1">
+            <li>
                 <a href="../assets/html/mypage.html">My Page</a>
             </li>
             <li><button type="button" id="logout-btn">Logout</button></li>
