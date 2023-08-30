@@ -4,8 +4,102 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/search.css" />
+    <title>Searched View</title>
   </head>
 
-  <body></body>
+  <body>
+    <header class="navbar">
+      <nav>
+        <div class="nav-container">
+          <a href="/index.html">
+            <img class="book" src="../img/books.png" alt="logo" />
+          </a>
+          <div class="menu-container">
+            <!-- login 관련 메뉴 -->
+            <ul class="menu">
+              <li><a href="../html/login.html">Login</a></li>
+              <li><a href="../html/signup.html">Sign Up</a></li>
+            </ul>
+            <ul class="menu before">
+            </ul>
+            <!-- // login 관련 메뉴 -->
+            <ul class="menu2">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="../html/shop.html">Shop</a></li>
+              <li><a href="../html/search.html">Search</a></li>
+              <li><a href="../html/chat.html">Chat</a></li>
+              <li><a href="../html/aboutUs.html">About Us</a></li>
+            </ul>
+            <ul class="dropdown-menu">
+              <li><a href="../html/login.html">Login</a></li>
+              <li><a href="../html/signup.html">Sign Up</a></li>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="../html/Shop.html">Shop</a></li>
+              <li><a href="../html/search.html">Search</a></li>
+              <li><a href="../html/chat.html">Chat</a></li>
+              <li><a href="../html/aboutUs.html">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="search-container">
+      <h1>Search Books</h1>
+      <form>
+        <div class="header_searchGroup">
+          <div class="header_search">
+            <select
+              id="header_searchSelect"
+              class="header_searchSelect"
+              aria-label="판매 상태 선택"
+            >
+              <option value="판매중">판매중</option>
+              <option value="판매진행중">판매진행중</option>
+              <option value="판매완료">판매완료</option>
+              <option value="전체">전체</option>
+            </select>
+            <input
+              type="text"
+              class="header_searchInput"
+              placeholder="검색어를 입력하세요"
+            />
+            <button type="submit" class="search-button">
+              <img src="../img/search.png" alt="search" />
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <section class="purchase">
+        <div class="container">
+              <div class="page_wrap">
+                <div class="page_nation">
+                  <a class="arrow pprev" href="#"></a>
+                  <a class="arrow prev" href="#"></a>
+                  <a href="#" class="active">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#">5</a>
+                  <a class="arrow next" href="#"></a>
+                  <a class="arrow nnext" href="#"></a>
+                </div>
+              </div>
+            </div>
+
+          <div class="book-list">
+            <div class="book">
+              
+            </div>
+          </div>
+        </div>
+      </section>
+    <footer class="footer">
+      <p>&copy; 2023, joongo-readers. All rights reserved.</p>
+    </footer>
+    <script src="../js/authorized.js"></script>
+    <script src="../js/search.js"></script>
+  </body>
 </html>
