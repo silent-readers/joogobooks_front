@@ -8,10 +8,12 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* header --------------------------------- */
 .navbar {
   background-color: #449fb1;
   color: white;
-  padding: 20px;
+  height: 100px;
+  padding: 10px;
   align-items: center;
 }
 
@@ -22,17 +24,22 @@ body {
   width: 100%;
 }
 
-.book {
+.nav-container a {
+  padding-top: 10px;
+}
+
+.logo {
   max-height: 70px;
 }
 
 .user {
-  width: 40px;
+  width: 30px;
 }
 
 .menu-container {
   display: flex-end;
   align-items: center;
+  padding-right: 15px;
 }
 
 .menu,
@@ -40,12 +47,18 @@ body {
 .menu2 {
   list-style: none;
   display: flex;
+}
+
+.menu,
+.menu2 {
   gap: 20px;
 }
 
 .menu {
-  justify-content: flex-end;
-  margin-bottom: 10px;
+  position: absolute;
+  text-align: end;
+  top: 20px;
+  right: 30px;
   font-size: 14px;
   opacity: 1;
   visibility: visible;
@@ -63,21 +76,32 @@ body {
 }
 
 .menu1 {
-  font-size: 12.5px;
-  margin-top: 8px;
+  font-size: 13px;
+  margin-top: 3px;
+  gap: 10px;
 }
 
-.menu1-1 {
-  margin-left: 25px;
+.menu1 li {
+  padding-top: 5px;
 }
 
 #logout-btn {
   border: 0;
-  background-color:inherit;
+  background-color: inherit;
   color: white;
+  font-size: 13px;
 }
 
+#logout-btn:hover {
+  color: #3344ff;
+}
+
+
 .menu2 {
+  position: absolute;
+  text-align: end;
+  top: 60px;
+  right: 30px;
   font-size: 18px;
 }
 
@@ -122,6 +146,7 @@ body {
   }
 }
 
+/* main --------------------------------- */
 .main-content {
   display: flex;
   justify-content: center;
@@ -159,6 +184,7 @@ body {
   border-radius: 10px;
 }
 
+/* footer --------------------------------- */
 .footer {
   position: fixed;
   bottom: 0;
