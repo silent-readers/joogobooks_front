@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/createPost.css" />
-    <script src="../js/Create Post.js"></script>
     <title>Create Post</title>
   </head>
 
@@ -13,24 +13,33 @@
     <header class="navbar">
       <nav>
         <div class="nav-container">
-          <a href="../html/Home.html">
+          <a href="/index.html">
             <img class="book" src="../img/books.png" alt="logo" />
           </a>
           <div class="menu-container">
+            <!-- login 관련 메뉴 -->
             <ul class="menu">
-              <li><img class="user" src="../img/user.png" alt="user" /></li>
-              <ul class="menu1">
-                <li>[별명]님, 환영합니다.</li>
-                <li><a href="../html/My Page.html">My Page</a></li>
-                <li><a href="../html/Home.html">Logout</a></li>
-              </ul>
+              <li><a href="../html/login.html">Login</a></li>
+              <li><a href="../html/signup.html">Sign Up</a></li>
             </ul>
+            <ul class="menu before">
+            </ul>
+            <!-- // login 관련 메뉴 -->
             <ul class="menu2">
-              <li><a href="../html/Home.html">Home</a></li>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="../html/shop.html">Shop</a></li>
+              <li><a href="../html/search.html">Search</a></li>
+              <li><a href="../html/chat.html">Chat</a></li>
+              <li><a href="../html/aboutUs.html">About Us</a></li>
+            </ul>
+            <ul class="dropdown-menu">
+              <li><a href="../html/login.html">Login</a></li>
+              <li><a href="../html/signup.html">Sign Up</a></li>
+              <li><a href="/index.html">Home</a></li>
               <li><a href="../html/Shop.html">Shop</a></li>
-              <li><a href="../html/Search.html">Search</a></li>
-              <li><a href="../html/Chat.html">Chat</a></li>
-              <li><a href="../html/About Us.html">About Us</a></li>
+              <li><a href="../html/search.html">Search</a></li>
+              <li><a href="../html/chat.html">Chat</a></li>
+              <li><a href="../html/aboutUs.html">About Us</a></li>
             </ul>
           </div>
         </div>
@@ -46,7 +55,7 @@
             accept="image/*"
             class="fileInput"
           />
-          <img class=book-cover src="../img/book-cover.png">
+          <img id="book-cover" class=book-cover src="../img/book-cover.png">
         </div>
         <div class="input-group">
           <button id="attachImageButton">사진 첨부하기</button>
@@ -86,34 +95,34 @@
             <ul>
               <li class="input-group">정가</li>
               <li>
-                <input type="number" id="regularPriceInput" />
+                <input type="text" id="regularPriceInput" />
               </li>
             </ul>
             <ul>
               <li class="input-group">판매가</li>
               <li>
-                <input type="number" id="salePriceInput" />
+                <input type="text" id="salePriceInput" />
               </li>
             </ul>
             <ul>
               <li class="input-group">책 상태</li>
               <li>
-                <p>
-                  <textarea
-                    placeholder="예) 첫장에 낙서가 있지만, 그 외에는 다 괜찮습니다."
-                  ></textarea>
-                </p>
+                  <p>
+                      <textarea id="detailInfo" placeholder="예) 첫장에 낙서가 있지만, 그 외에는 다 괜찮습니다."></textarea>
+                  </p>
               </li>
-            </ul>
+          </ul>
+          <div class="button-group">
+              <button type="button" id="reset">초기화</button>
+              <button type="submit" id="register">등록하기</button>
+          </div>
         </form>
-        <div class="button-group">
-          <button id="reset">초기화</button>
-          <button id="register">등록하기</button>
-        </div>
       </div>
     </section>
     <footer class="footer">
       <p>&copy; 2023, joongo-readers. All rights reserved.</p>
     </footer>
+    <script src="../js/authorized.js"></script>
+    <script src="../js/createpost.js"></script>
   </body>
 </html>
