@@ -4,8 +4,6 @@ const active_ul = document.getElementsByClassName('menu');
 const payload = localStorage.getItem('payload');
 const parsed_payload = JSON.parse(payload);
 
-console.log(parsed_payload);
-
 if (!parsed_payload) {
     main_btn.addEventListener('click', (e) => {
         e.preventDefault();
