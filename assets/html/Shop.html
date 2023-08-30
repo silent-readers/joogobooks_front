@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/shop.css" />
     <title>Shop</title>
   </head>
@@ -12,24 +13,33 @@
     <header class="navbar">
       <nav>
         <div class="nav-container">
-          <a href="../html/Home.html">
+          <a href="/index.html">
             <img class="book" src="../img/books.png" alt="logo" />
           </a>
           <div class="menu-container">
+            <!-- login 관련 메뉴 -->
             <ul class="menu">
-              <li><img class="user" src="../img/user.png" alt="user" /></li>
-              <ul class="menu1">
-                <li>[별명]님, 환영합니다.</li>
-                <li><a href="../html/My Page.html">My Page</a></li>
-                <li><a href="../html/Home.html">Logout</a></li>
-              </ul>
+              <li><a href="../html/login.html">Login</a></li>
+              <li><a href="../html/signup.html">Sign Up</a></li>
             </ul>
+            <ul class="menu before">
+            </ul>
+            <!-- // login 관련 메뉴 -->
             <ul class="menu2">
-              <li><a href="../html/Home.html">Home</a></li>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="../html/shop.html">Shop</a></li>
+              <li><a href="../html/search.html">Search</a></li>
+              <li><a href="../html/chat.html">Chat</a></li>
+              <li><a href="../html/aboutUs.html">About Us</a></li>
+            </ul>
+            <ul class="dropdown-menu">
+              <li><a href="../html/login.html">Login</a></li>
+              <li><a href="../html/signup.html">Sign Up</a></li>
+              <li><a href="/index.html">Home</a></li>
               <li><a href="../html/Shop.html">Shop</a></li>
-              <li><a href="../html/Search.html">Search</a></li>
-              <li><a href="../html/Chat.html">Chat</a></li>
-              <li><a href="../html/About Us.html">About Us</a></li>
+              <li><a href="../html/search.html">Search</a></li>
+              <li><a href="../html/chat.html">Chat</a></li>
+              <li><a href="../html/aboutUs.html">About Us</a></li>
             </ul>
           </div>
         </div>
@@ -37,7 +47,7 @@
     </header>
     <section class="purchase">
       <div class="container">
-          <h2>Purchase History</h2>
+          <h2>Joongo BookList</h2>
           <div class="buttons">
             <div class="filter-buttons">
               <button><a href="#">전체</button>
@@ -63,7 +73,7 @@
 
         <div class="book-list">
           <div class="book">
-            <input type="checkbox" class="checkbox" placeholder="체크박스">
+            <input type="checkbox" class="checkbox">
             <img src="../img/book-cover.png" alt="Book Cover" /> 
             <div class="book-details">
               <p class="book-name">Django - 처음부터 배우는 Django Frame Work</p>
@@ -90,5 +100,7 @@
     <footer class="footer">
       <p>&copy; 2023, joongo-readers. All rights reserved.</p>
     </footer>
+    <script src="../js/authorized.js"></script>
+    <script src="../js/shop.js"></script>
   </body>
 </html>
