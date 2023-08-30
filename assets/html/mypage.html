@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/mypage.css" />
     <title>My Page</title>
   </head>
@@ -12,35 +13,33 @@
     <header class="navbar">
       <nav>
         <div class="nav-container">
-          <a href="../html/Authentication View.html">
+          <a href="/index.html">
             <img class="book" src="../img/books.png" alt="logo" />
           </a>
           <div class="menu-container">
+            <!-- login 관련 메뉴 -->
             <ul class="menu">
-              <li><img class="user" src="../img/user.png" alt="user" /></li>
-              <ul class="menu1">
-                <li>[별명]님, 환영합니다.</li>
-                <li class="menu1-1">
-                  <a href="../html/My Page.html">My Page</a>
-                </li>
-                <li><a href="../html/Home.html">Logout</a></li>
-              </ul>
+              <li><a href="../html/login.html">Login</a></li>
+              <li><a href="../html/signup.html">Sign Up</a></li>
             </ul>
+            <ul class="menu before">
+            </ul>
+            <!-- // login 관련 메뉴 -->
             <ul class="menu2">
-              <li><a href="../html/Home.html">Home</a></li>
-              <li><a href="../html/Shop.html">Shop</a></li>
-              <li><a href="../html/Search.html">Search</a></li>
-              <li><a href="../html/Chat.html">Chat</a></li>
-              <li><a href="../html/About Us.html">About Us</a></li>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="../html/shop.html">Shop</a></li>
+              <li><a href="../html/search.html">Search</a></li>
+              <li><a href="../html/chat.html">Chat</a></li>
+              <li><a href="../html/aboutUs.html">About Us</a></li>
             </ul>
             <ul class="dropdown-menu">
-              <li><a href="../html/Login.html">Login</a></li>
-              <li><a href="../html/Sign Up.html">Sign Up</a></li>
-              <li><a href="../html/Home.html">Home</a></li>
+              <li><a href="../html/login.html">Login</a></li>
+              <li><a href="../html/signup.html">Sign Up</a></li>
+              <li><a href="/index.html">Home</a></li>
               <li><a href="../html/Shop.html">Shop</a></li>
-              <li><a href="../html/Search.html">Search</a></li>
-              <li><a href="../html/Chat.html">Chat</a></li>
-              <li><a href="../html/About Us.html">About Us</a></li>
+              <li><a href="../html/search.html">Search</a></li>
+              <li><a href="../html/chat.html">Chat</a></li>
+              <li><a href="../html/aboutUs.html">About Us</a></li>
             </ul>
           </div>
         </div>
@@ -50,17 +49,17 @@
       <ul class="profile">
         <h2>Profile</h2>
         <ul class="menu-list">
-          <li class="present"><a href="./My Page.html">Profile 설정</a></li>
+          <li class="present"><a href="./mypage.html">Profile 설정</a></li>
           <li>
-            <a href="./Change Password.html">비밀번호 변경</a>
+            <a href="./changePassword.html">비밀번호 변경</a>
           </li>
         </ul>
       </ul>
       <ul class="purchase-history">
         <h2>Purchase History</h2>
         <ul class="menu-list">
-          <li><a href="./Purchase History.html">구매목록</a></li>
-          <li><a href="./Chat.html">채팅 History</a></li>
+          <li><a href="./purchaseHistory.html">구매목록</a></li>
+          <li><a href="./chatHistory.html">채팅 History</a></li>
         </ul>
       </ul>
       <ul class="side-dropdown-menu">
@@ -72,7 +71,7 @@
         <li><a href="../html/Chat.html">채팅 History</a></li>
       </ul>
     </div>
-    <div class="user-profile">
+    <div id="user-profile" class="user-profile">
       <img class="profile img" src="../img/user.png" alt="profile" />
       <div class="userinfo">
         <h2 class="username">UserName</h2>
@@ -97,19 +96,21 @@
           <li>About Me</li>
           <li>
             <input
-              type="About Me"
-              id="About Me"
-              name="About Me"
+              type="text"
+              id="aboutme"
+              name="aboutme"
               placeholder="  본인 정보"
               required
             />
           </li>
         </ul>
-        <button type="submit">프로필 변경</button>
+        <button id="profile-btn" type="submit">프로필 변경</button>
       </div>
     </form>
     <footer class="footer">
       <p>&copy; 2023, joongo-readers. All rights reserved.</p>
     </footer>
+    <script src="../js/authorized.js"></script>
+    <script src="../js/mypage.js"></script>
   </body>
 </html>
