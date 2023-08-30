@@ -16,7 +16,7 @@ if (!parsed_payload) {
         <ul class="menu1">
             <li>[별명]님, 환영합니다.</li>
             <li class="menu1-1">
-                <a href="../html/mypage.html">My Page</a>
+                <a href="../html/mypage.html?id=${parsed_payload.user_id}">My Page</a>
             </li>
             <li><button type="button" id="logout-btn">Logout</button></li>
         </ul>
