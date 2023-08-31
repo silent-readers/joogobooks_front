@@ -12,13 +12,17 @@ window.onload = async function() {
     const response = await fetch(`http://127.0.0.1:8000/book/${bookId}`, { method: 'GET' });
     const bookData = await response.json();
 
+    console.log(bookData)
+
     const bookDetailDiv = document.getElementsByClassName('book-list')[0];
     const bookDetail = document.createElement('div');
     bookDetail.classList.add('book');
 
     let innerHTMLContent = `
-        <img src="${bookData.image}" alt="Book Cover"> 
-        <div class="book-details">
+        <div class="book-img">
+            <img src="${bookData.image}" alt="Book Cover">
+        </div>
+        <div class="book-detail">
             <h5>${bookData.sale_condition}</h5>
             <p class="book-name">${bookData.title}</p>
             <ul class="book-info">
@@ -46,7 +50,7 @@ window.onload = async function() {
         `
     } else {
         innerHTMLContent += `
-        <button class="chat"><a href="./Chat.html">채팅하기</a></button>
+        <button id="chat-btn" class="chat">채팅하기</button>
         `
     }
     bookDetail.innerHTML = innerHTMLContent;
@@ -74,6 +78,42 @@ window.onload = async function() {
             .catch((err) => {
                 alert(err);
             })
+        });
+    }
+
+    const chat_btn = document.getElementById('chat-btn');
+    if (chat_btn) {
+        chat_btn.addEventListener('click', async function(e) {
+            e.preventDefault();
+            
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/chat/new/', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${access_token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        room_id: bookData.id,
+                        host: username,
+                        guest: bookData.writer,
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.detail);
+                }
+
+                const chatRoomData = await response.json();
+                const chatUrl = `http://127.0.0.1:5500/assets/html/chat.html?room_id=${chatRoomData.id}&guest_id=${bookData.writer}`;
+                
+                window.location.replace(chatUrl);
+            
+            } catch (error) {
+                alert(error.message || "오류가 발생했습니다.");
+                console.error(error);
+            }
         });
     }
 }
