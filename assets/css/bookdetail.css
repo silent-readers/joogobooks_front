@@ -1,12 +1,38 @@
 .purchase {
-    margin-left: 15%;
-    align-items: center;
-  }
+  width: 1000px;
+  height: 75vh;
+  margin: 0 auto;
+}
   
-  a:-webkit-any-link {
-    text-decoration: none;
-  }
-  
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.book {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.book-img{
+  width: 50%;
+}
+
+.book-details {
+  width: 50%;
+  padding-top: 10px;
+  width: 60%;
+}
+
+.book-details > h5 {
+  color: rgb(95, 95, 99);
+}
+
+.book-name {
+  width: fit-content;
+  font-size: 40px;
+  font-weight: bold;
+}
   .buttons {
     align-items: flex-start;
   }
@@ -114,30 +140,14 @@
   }
   
   /* book */
-  .book {
-    display: flex;
-    align-items: center;
-  }
-  
+
   .book img {
     max-width: 28%;
-    margin-left: 10px;
-    margin-top: 60vh;
   }
   
-  h5 {
-    color: rgb(95, 95, 99);
-  }
+
   
-  .book-details {
-    margin-left: 10vh;
-    margin-top: 55vh;
-  }
-  
-  .book-name {
-    font-size: 40px;
-    font-weight: bold;
-  }
+
   
   .book-info {
     display: flex;
@@ -196,8 +206,8 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-    margin-left: 30%;
     margin-top: 40px;
+    margin-right: 10px;
   }
   
   .chat a {
@@ -206,6 +216,6 @@
   }
   
   .chat:hover {
-    background-color: #3344ff;
+    background-color: #6973e6;
   }
   

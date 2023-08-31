@@ -1,10 +1,16 @@
+.purchase {
+  width: 1200px;
+  height: 75vh;
+  margin: 0 auto;
+  align-items: center;
+}
+
 .container {
   padding: 20px;
 }
 
-.purchase {
-  margin-left: 15%;
-  align-items: center;
+.container > h2 {
+  font-size: 35px;
 }
 
 a:-webkit-any-link {
@@ -12,7 +18,29 @@ a:-webkit-any-link {
 }
 
 .buttons {
-  align-items: flex-start;
+  display: flex;
+}
+.filter-btn {
+  width: 80%;
+  padding-left: 10px;
+}
+.create-btn {
+  width: 20%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.update-btn {
+  background-color: #449fb1;
+  color: white;
+  border: none;
+  height: 56px;
+  padding: 20px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: center;
 }
 
 .filter-buttons button {
@@ -20,7 +48,6 @@ a:-webkit-any-link {
   border: none;
   padding: 5px 10px;
   margin-top: 10px;
-  margin-left: 20px;
   margin-bottom: 10px;
   cursor: pointer;
   display: inline-block;
@@ -94,19 +121,7 @@ a:-webkit-any-link {
   border: 1px solid #42454c;
 }
 
-.update-item {
-  position: absolute;
-  background-color: #449fb1;
-  color: white;
-  border: none;
-  padding: 10px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 12px;
-  margin-left: 35%;
-  text-align: right;
-  margin-top: -15px;
-}
+
 
 .update-item a {
   color: white;
@@ -121,6 +136,8 @@ a:-webkit-any-link {
 .book-list {
   grid-template-rows: repeat(3, 1fr);
   margin-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-top: 1px solid black;
 }
 
@@ -131,13 +148,14 @@ a:-webkit-any-link {
 }
 
 .book img {
-  max-width: 8%;
+  max-width: 10%;
   height: auto;
-  margin-left: 10px;
+  margin: 0 25px;
 }
 
 .book-details {
-  margin-left: 10px;
+  width: 45%;
+  margin: 0 10px;
 }
 
 .book-info {
@@ -183,11 +201,12 @@ ul.info {
 
 .saler {
   margin-top: 5px;
-  font-size: 10px;
+  font-size: 15px;
   text-align: center;
 }
 
 .check-item {
+  margin-left: auto;
   background-color: #449fb1;
   color: white;
   border: none;
@@ -195,7 +214,6 @@ ul.info {
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
-  margin-left: 10%;
 }
 
 .check-item a {
