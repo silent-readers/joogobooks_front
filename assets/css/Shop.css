@@ -134,7 +134,6 @@ a:-webkit-any-link {
 
 /* book */
 .book-list {
-  grid-template-rows: repeat(3, 1fr);
   margin-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
@@ -142,13 +141,16 @@ a:-webkit-any-link {
 }
 
 .book {
+  height: 150px;
   display: flex;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 10px;
+  border-bottom: 1px solid rgb(196, 193, 193);
 }
 
 .book img {
-  max-width: 10%;
+  max-width: 110px;
+  max-height: 110px;
   height: auto;
   margin: 0 25px;
 }

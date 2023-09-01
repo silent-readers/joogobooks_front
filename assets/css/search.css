@@ -8,13 +8,19 @@
 }
 
 .search-container h1 {
+  font-size: 60px;
   margin-bottom: 20px;
+}
+.search-container P {
+  margin-bottom: 10px;
 }
 
 .header_searchGroup {
+  display: inline-block;
+  background: rgb(181, 199, 212);
   margin: 10px auto;
   height: 50px;
-  width: 500px;
+  width: 820px;
 }
 
 .header_search {
@@ -32,6 +38,10 @@
   text-align: center;
 }
 
+option {
+  background: rgb(181, 199, 212);
+}
+
 .header_searchInput {
   width: 150%;
   height: 50px;
@@ -40,7 +50,7 @@
   font-size: 10pt;
   float: left;
   color: #000000;
-  padding-left: 45px;
+  padding-left: 25px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 0 5px 5px 0;
@@ -62,15 +72,10 @@
 }
 
 .search-button {
-  position: absolute;
-  top: 50%;
-  margin-left: 95%;
-  margin-top: -2%;
-  z-index: 1;
-  background-color: rgb(181, 199, 212);
+  height: 50px;
+  width: 50px;
   border: none;
   cursor: pointer;
-  transition: transform 0.2s;
 }
 
 .search-button:hover {
@@ -80,6 +85,10 @@
 .search-button img {
   width: 20px;
   height: 20px;
+}
+
+.purchase {
+  height: 65vh;
 }
 
 .container {
@@ -158,13 +167,16 @@
 
 /* book */
 .book-list {
-  margin-left: 13%;
+  width: 1000px;
+  margin: 0 auto;
 }
 
 .book {
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
+
 
 .book img {
   max-width: 8%;
@@ -174,6 +186,7 @@
 }
 
 .book-details {
+  width: 40%;
   margin-left: 40px;
   margin-top: 35px;
 }
@@ -237,6 +250,7 @@ ul.info {
 }
 
 .check-item {
+  list-style-type: none;
   background-color: #449fb1;
   color: white;
   border: none;
