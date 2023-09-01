@@ -12,49 +12,53 @@ window.onload = async function() {
     const response = await fetch(`http://127.0.0.1:8000/book/${bookId}`, { method: 'GET' });
     const bookData = await response.json();
 
-    console.log(bookData)
+    const mediaUrl = 'http://127.0.0.1:8000';
+    const imageUrl = mediaUrl + bookData.image;
 
-    const bookDetailDiv = document.getElementsByClassName('book-list')[0];
-    const bookDetail = document.createElement('div');
-    bookDetail.classList.add('book');
+    const imgChange = document.getElementById('bookdetail-img');
+    imgChange.setAttribute('src', `${imageUrl}`)
 
+    const bookDetailDiv = document.getElementsByClassName('bookdetail-info-text')[0];
+    
     let innerHTMLContent = `
-        <div class="book-img">
-            <img src="${bookData.image}" alt="Book Cover">
+        <ul class="bookdetail-category">
+            <p>판매중</p>
+        </ul>
+        <div class="bookdetail-title">
+            <h2>${bookData.title}</h2>
         </div>
-        <div class="book-detail">
-            <h5>${bookData.sale_condition}</h5>
-            <p class="book-name">${bookData.title}</p>
-            <ul class="book-info">
-                <li class="book2">${bookData.author}</li>
-                <li class="book2">${bookData.publisher}</li>
-            </ul>
-            <ul class="book-status">
-                <li class="book3">상태 : ${bookData.condition}</li>
-                <li class="book3">판매가 : ${bookData.selling_price}원</li>
-                <li>(정가 : ${bookData.original_price}원)</li>
-            </ul>
-            <ul class="info">
-                <li class="saler">판매자 : [별명]</li>
-            </ul>
-            <ul class="exp">
-                <p>${bookData.detail_info}</p>
-            </ul>
-        </div>
+        <ul class="bookdetail-publish">
+            <li>${bookData.author} 저</li>
+            <li>${bookData.publisher}</li>
+        </ul>
+        <ul class="bookdetail-status">
+            <li>상태 : ${bookData.condition}</li>
+            <li>판매가 : ${bookData.selling_price}원 (정가 : ${bookData.original_price}원)</li>
+        </ul>
+        <ul class="bookdetail-sailer">
+            <li>판매자 : [별명]</li>
+        </ul>
+        <ul class="bookdetail-about">
+            <li>${bookData.detail_info}</li>
+        </ul>
     `;
 
     if (bookData.writer == username) {
         innerHTMLContent += `
-        <a class="chat" href="./updatePost.html?id=${bookData.id}">정보 수정하기</a>
-        <button id="book_deletebtn" class="chat">정보 삭제하기</button>
+        <div class="bookdetail-btn">
+            <a href="./updatePost.html?id=${bookData.id}">정보수정</a>
+            <button id="book_deletebtn" class="delete-btn-book">정보 삭제하기</button>
+        </div>
         `
     } else {
         innerHTMLContent += `
-        <button id="chat-btn" class="chat">채팅하기</button>
+        <div class="bookdetail-btn">
+            <button id="chat-btn" class="chat-btn">채팅하기</button>
+        </div>
         `
     }
-    bookDetail.innerHTML = innerHTMLContent;
-    bookDetailDiv.appendChild(bookDetail);
+
+    bookDetailDiv.innerHTML = innerHTMLContent;
 
     const del_btn = document.getElementById('book_deletebtn');
     if (del_btn) {
@@ -68,7 +72,7 @@ window.onload = async function() {
             })
             .then((res) => {
                 console.log(res)
-                if (res.status === 204) {
+                if (res.ok) {
                     alert('해당 도서정보가 삭제되었습니다.')
                     window.location.replace('http://127.0.0.1:5500/assets/html/shop.html')
                 } else {
