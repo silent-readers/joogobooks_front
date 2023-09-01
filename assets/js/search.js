@@ -32,13 +32,13 @@ function displayBooks(books) {
     for (const book of books) {
         const bookDiv = document.createElement('div');
         bookDiv.className = 'book';
-        
 
+        console.log(book)
         bookDiv.innerHTML = `
             <ul class="number_list">
                 <li class="number_item">${book.sale_condition}</li>
             </ul>
-            <img src="${book.cover_image}" alt="Book Cover" /> 
+            <img src="${book.image}" alt="Book Cover" /> 
             <div class="book-details">
                 <p class="book-name">${book.title}</p>
                 <ul class="book-info">
@@ -50,14 +50,11 @@ function displayBooks(books) {
                   <li class="book3">원가 : ${book.original_price}원</li>
                   <li>판매가 : ${book.selling_price}원</li>
                 </ul>
-                <div class="book-exp">
-                    <p>${book.detail_info}</p>
-                </div>
             </div>
             <ul class="info">
             <li class="saler">판매자 : ${book.writer}</li>
           </ul>
-          <button class="check-item"><a href="./Book Detail.html">상품 확인하기</a></button>
+          <a class="check-item" href="http://127.0.0.1:5500/assets/html/bookdetail.html?id=${book.id}/">상품 확인하기</a>
         `;
 
         bookList.appendChild(bookDiv);
