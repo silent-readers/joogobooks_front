@@ -1,96 +1,43 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const nicknameInput = document.getElementById("nickname");
-    const aboutMeInput = document.getElementById("aboutme");
-    const profileForm = document.querySelector(".profile-container");
-    const profileBtn = document.getElementById("profile-btn");
-    const userProfile = document.getElementById("user-profile");
-    const usernameElem = document.querySelector(".username");
-    const emailElem = document.querySelector(".email");
-  
-    // JWT 토큰에서 payload 정보 가져오기
-    function getPayloadFromToken() {
-      const token = localStorage.getItem("access_token");
-      if (token) {
-        const payloadBase64 = token.split(".")[1];
-        const payload = JSON.parse(atob(payloadBase64));
-        return payload;
-      }
-      return null;
+window.onload = function () {
+  const payload = localStorage.getItem('payload')
+  const parsed_payload = JSON.parse(payload)
+  const userId = parsed_payload.user_id
+
+  document.getElementById("profile-id").innerText = parsed_payload.nickname;
+  document.getElementById("profile-email").innerText = parsed_payload.email;
+    
+  const profile_createbtn = document.getElementById("profile-btn");
+
+  // 프로필 이미지 불러오기
+  const profileImg = document.getElementById('my_profile_img')
+
+  // 서버에서 프로필 이미지 URL 가져오기
+  fetch(`http://127.0.0.1:8000/api/user/profile/${userId}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
     }
-  
-    // 현재 로그인한 유저 ID 가져오기
-    function getCurrentUserId() {
-      const payload = getPayloadFromToken();
-      if (payload) {
-        return payload.user_id;
-      }
-      return null;
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.profile_img) {
+      // 이미지 URL이 있는 경우
+      const mediaUrl = 'http://127.0.0.1:8000';
+      const imageUrl = mediaUrl + data.profile_img;
+      profileImg.src = imageUrl
+    } else {
+      // 이미지 URL이 없는 경우 기본 이미지 사용
+      profileImg.src = "../img/user.png";
     }
-  
-    // 프로필 조회 및 표시
-    async function viewProfile() {
-      const userId = getCurrentUserId();
-  
-      try {
-        const response = await fetch(
-          `http://127.0.0.1:8000/api/user/profile/${userId}`,
-          {
-            method: "GET",
-          }
-        );
-  
-        if (response.ok) {
-          const profileData = await response.json();
-          nicknameInput.value = profileData.nickname;
-          aboutMeInput.value = profileData.about_me;
-        } else {
-          console.error("프로필 조회에 실패했습니다.");
-        }
-      } catch (error) {
-        console.error("프로필 조회 중 오류 발생:", error);
-      }
-    }
-  
-    // 프로필 수정 처리
-    async function updateProfile(event) {
-      event.preventDefault();
-      const userId = getCurrentUserId();
-      const nickname = nicknameInput.value;
-      const aboutMe = aboutMeInput.value;
-  
-      const access_token = localStorage.getItem("access_token");
-  
-      const formData = new FormData();
-      formData.append("nickname", nickname);
-      formData.append("about_me", aboutMe);
-  
-      try {
-        const response = await fetch(
-          `http://127.0.0.1:8000/api/user/profile/${userId}/update`,
-          {
-            headers: {
-              Authorization: `Bearer ${access_token}`,
-            },
-            method: "PUT",
-            body: formData,
-          }
-        );
-  
-        if (response.ok) {
-          console.log("프로필이 수정되었습니다.");
-          viewProfile();
-        } else {
-          console.error("프로필 수정에 실패했습니다.");
-        }
-      } catch (error) {
-        console.error("프로필 수정 중 오류 발생:", error);
-      }
-    }
-  
-    // 프로필 조회 및 수정 동작
-    viewProfile();
-  
-    // 프로필 변경 버튼 클릭 시
-    profileForm.addEventListener("submit", updateProfile);
+  })
+  .catch(error => {
   });
+  
+  // 프로필 생성버튼
+  profile_createbtn.addEventListener("click", () => {
+    
+    window.location.href=`http://127.0.0.1:5500/assets/html/mypage.html?id=${userId}`
+  });
+
+}
   
