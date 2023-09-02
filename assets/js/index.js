@@ -15,9 +15,9 @@ if (!parsed_payload) {
     active_ul[1].innerHTML = `
         <li><img class="user" src="../assets/img/user.png" alt="user"></li>
         <ul class="menu1">
-            <li>[별명]님, 환영합니다.</li>
+            <li>${parsed_payload.nickname}님, 환영합니다.</li>
             <li>
-                <a href="../assets/html/mypage.html">My Page</a>
+                <a href="../assets/html/mypage_main.html?id=${parsed_payload.user_id}">My Page</a>
             </li>
             <li><button type="button" id="logout-btn">Logout</button></li>
         </ul>
