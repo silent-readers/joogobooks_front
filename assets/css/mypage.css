@@ -1,94 +1,97 @@
-.h2 {
-  color: black;
-  font-size: 20px;
-}
-
-.side-menu {
-  position: fixed;
-  top: 21vh;
-  left: 0;
-  color: #000000;
-  height: 50%;
-  width: 250px;
-  margin-top: 10vh;
-  margin-left: 20px;
-  padding: 10px;
-  transition: none;
-  z-index: 1000;
-}
-
-.side-menu.open {
-  left: -300px;
-}
-
-.menu-list {
-  list-style: none;
-  padding: 20px;
-}
-
-.menu-list li {
-  margin-bottom: 15px;
-}
-
-.menu-list li a {
-  text-decoration: none;
-  color: #0e0b0b;
-  font-size: 18px;
-  display: block;
-  transition: color 0.3s;
-}
-
-.menu-list li a:hover {
-  color: #ff5733;
-}
-
-.user-profile {
-  margin-top: 15px;
+section {
+  width: 100%;
+  margin: 20px auto;
+  height: 60vh;
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-left: 18%;
+  justify-content: center;
 }
 
-.user-profile img {
-  width: 20%;
+ul, li, a {
+  list-style: none;
+  text-decoration: none;
+}
+
+
+/* side menu ---------------------------- */
+.side-menu {
+  width: 25%;
+  height: 140px;
+  margin: 142px 50px 142px;
+  border-right: 1px solid gray;
+}
+
+.profile {
+  margin-bottom: 20px;
+}
+
+.profile > h2 {
+  font-size: 35px;
+  padding-bottom: 10px;
+}
+
+.menu-list > li {
+  margin-left: 30px;
+  color: #000;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.menu-list > li:hover {
+  color: rgb(255, 0, 157);
+}
+
+
+/* profile content ---------------------------- */
+.user-profile {
+  width: 75%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_img > img {
+  width: 150px;
+  padding-top: 20px;
+}
+
+.fileInput {
+  display: none;
+}
+
+#attachImageButton {
+  background-color: #6ac1d3;
+  width: 150px;
+  height: 30px;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
 }
 
 .userinfo {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
+  padding-bottom: 20px;
 }
 
 .username {
-  font-size: 40px;
-  margin-bottom: 6px;
+  text-align: center;
+  font-size: 20px;
+  margin: 10px 0;
 }
 
-.email {
-  font-size: 15px;
-}
-
-.profile-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30vh;
-  padding: 20px;
-  flex-direction: column;
-  margin-left: 18%;
-  gap: 30px;
-}
-
-ul,
-li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.present {
-  font-weight: bold;
+.userinfo {
+  margin-top: 20px;
 }
 
 .form-group ul {
@@ -112,18 +115,16 @@ li {
   border: none;
 }
 
-button {
-  margin-top: 10px;
-  padding: 10px 30px;
+.profile-btn {
   background-color: #449fb1;
-  color: #fff;
-  border: none;
+  width: 300px;
+  height: 35px;
+  border: 0;
   border-radius: 10px;
+  color: white;
   cursor: pointer;
-  font-size: 16px;
-  width: 100%;
 }
 
-button:hover {
-  background-color: #0056b3;
+.profile-btn:hover {
+  background-color: #275c66;
 }
