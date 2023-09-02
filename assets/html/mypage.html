@@ -29,73 +29,70 @@
               <li><a href="../html/chatlist.html">Chat</a></li>
               <li><a href="../html/aboutUs.html">About Us</a></li>
             </ul>
-            <ul class="dropdown-menu">
-              <li><a href="../html/login.html">Login</a></li>
-              <li><a href="../html/signup.html">Sign Up</a></li>
-              <li><a href="/index.html">Home</a></li>
-              <li><a href="../html/Shop.html">Shop</a></li>
-              <li><a href="../html/search.html">Search</a></li>
-              <li><a href="../html/chat.html">Chat</a></li>
-              <li><a href="../html/aboutUs.html">About Us</a></li>
-            </ul>
           </div>
         </div>
       </nav>
     </header>
-    <div class="side-menu">
-      <ul class="profile">
-        <h2>Profile</h2>
-        <ul class="menu-list">
-          <li class="present"><a href="./mypage.html">Profile 설정</a></li>
-          <li>
-            <a href="./changePassword.html">비밀번호 변경</a>
-          </li>
+    <section>
+      <div class="side-menu">
+        <ul class="profile">
+          <h2>Profile</h2>
+          <ul class="menu-list">
+            <li class="present"><a href="./mypage.html">Profile 설정</a></li>
+            <li>
+              <a href="./changePassword.html">비밀번호 변경</a>
+            </li>
+          </ul>
         </ul>
-      </ul>
-      <ul class="purchase-history">
-        <h2>Purchase History</h2>
-        <ul class="menu-list">
-          <li><a href="./purchaseHistory.html">찜목록</a></li>
-          <li><a href="./chatHistory.html">채팅 History</a></li>
-        </ul>
-      </ul>
-    </div>
-    <div id="user-profile" class="user-profile">
-      <img class="profile img" src="../img/user.png" alt="profile" />
-      <div class="userinfo">
-        <h2 class="username">UserName</h2>
-        <h4 class="email">user1234@gmail.com</h4>
       </div>
-    </div>
-    <form class="profile-container">
-      <div class="form-group">
-        <ul>
-          <li>nickname</li>
-          <li>
+      <div id="user-profile" class="user-profile">
+        <form class="profile-container">
+          <div class="profile_img">
             <input
-              type="text"
-              id="nickname"
-              name="nickname"
-              placeholder="  닉네임"
-              required
+              type="file"
+              id="imageInput"
+              accept="image/*"
+              class="fileInput"
             />
-          </li>
-        </ul>
-        <ul>
-          <li>About Me</li>
-          <li>
-            <input
-              type="text"
-              id="aboutme"
-              name="aboutme"
-              placeholder="  본인 정보"
-              required
-            />
-          </li>
-        </ul>
-        <button id="profile-btn" type="submit">프로필 변경</button>
-      </div>
-    </form>
+            <img id="my_img"class="profile img" alt="profile" />
+            <div class="input-imgbtn">
+              <button id="attachImageButton">이미지 변경하기</button>
+            </div>
+            <p class="username" id="profile-id"></p>
+        </div>
+        <div class="userinfo">
+          <div class="form-group">
+            <ul>
+              <li>nickname</li>
+              <li>
+                <input
+                  type="text"
+                  id="nickname"
+                  name="nickname"
+                  placeholder="  닉네임"
+                  required
+                />
+              </li>
+            </ul>
+            <ul>
+              <li>About Me</li>
+              <li>
+                <input
+                  type="text"
+                  id="aboutme"
+                  name="aboutme"
+                  placeholder="  본인 정보"
+                  required
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="form-group">
+          <button id="profile-putbtn" class="profile-btn" type="submit">프로필 생성</button>
+        </div>
+      </form>
+    </section>
     <footer class="footer">
       <p>&copy; 2023, joongo-readers. All rights reserved.</p>
     </footer>
