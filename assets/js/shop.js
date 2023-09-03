@@ -1,4 +1,8 @@
 window.onload = async function bookList() {
+  const payload = localStorage.getItem('payload')
+  const parsed_payload = JSON.parse(payload)
+
+
   const response = await fetch('http://127.0.0.1:8000/book/list/', { method: 'GET' })
   const response_json = await response.json()
 
@@ -28,7 +32,7 @@ window.onload = async function bookList() {
         </ul>
       </div>
       <ul class="info">
-        <li class="saler">판매자 : [별명] <!-- 판매자 별명 정보가 없어서 그대로 두었습니다. --></li>
+        <li class="saler">판매자 : ${parsed_payload.nickname} <!-- 판매자 별명 정보가 없어서 그대로 두었습니다. --></li>
       </ul>
       <a class="check-item" href="http://127.0.0.1:5500/assets/html/bookdetail.html?id=${bookData.id}/">상품 확인하기</a>
       </div>
