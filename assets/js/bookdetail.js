@@ -36,7 +36,7 @@ window.onload = async function() {
             <li>판매가 : ${bookData.selling_price}원 (정가 : ${bookData.original_price}원)</li>
         </ul>
         <ul class="bookdetail-sailer">
-            <li>판매자 : [별명]</li>
+            <li>판매자 : ${parsed_payload.nickname}</li>
         </ul>
         <ul class="bookdetail-about">
             <li>${bookData.detail_info}</li>
