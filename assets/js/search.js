@@ -27,6 +27,9 @@ async function searchBooks() {
 
 // 검색 결과 표시 함수
 function displayBooks(books) {
+    const payload = localStorage.getItem('payload')
+    const parsed_payload = JSON.parse(payload)
+
     bookList.innerHTML = ''; 
     
     for (const book of books) {
@@ -52,7 +55,7 @@ function displayBooks(books) {
                 </ul>
             </div>
             <ul class="info">
-            <li class="saler">판매자 : ${book.writer}</li>
+            <li class="saler">판매자 : ${parsed_payload.nickname}</li>
           </ul>
           <a class="check-item" href="http://127.0.0.1:5500/assets/html/bookdetail.html?id=${book.id}/">상품 확인하기</a>
         `;
