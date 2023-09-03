@@ -21,6 +21,7 @@ signup_btn.addEventListener('click', (e) => {
         body:JSON.stringify({
             'username' : document.getElementById('id').value,
             'email' : document.getElementById('email').value,
+            'nickname' : document.getElementById('user-nickname').value,
             'password' : password,
         }),
     })
