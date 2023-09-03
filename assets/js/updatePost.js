@@ -16,9 +16,12 @@ window.onload = async function() {
             "Content-type": "application/json",
         },
      });
-    
+
     const bookData = await response.json();
     const bookDetailsession = document.querySelector('section');
+
+    const mediaUrl = 'http://127.0.0.1:8000';
+    const imageUrl = mediaUrl + bookData.image;
     
     let innerHTMLContent = `
     <div class="left-section">
@@ -30,7 +33,7 @@ window.onload = async function() {
         accept="image/*"
         class="fileInput"
       />
-      <img id="book-cover" class=book-cover src="${bookData.image}">
+      <img id="book-cover" class=book-cover src="${imageUrl}">
       <div class="input-group">
         <button id="attachImageButton">사진 첨부하기</button>
       </div>
