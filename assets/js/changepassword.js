@@ -24,7 +24,7 @@ changepassword_btn.addEventListener('click', async (e) => {
     };
 
     try {
-        const response = await fetch(`http://127.0.0.1:8000/api/user/auth/${user_id}/changepassword/`, {
+        const response = await fetch(`http://backend.joongobooks.com/api/user/auth/${user_id}/changepassword/`, {
             headers: {
                 'Authorization': `Bearer ${access_token}`,
                 "Content-type": "application/json",

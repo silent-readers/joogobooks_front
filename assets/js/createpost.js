@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log(formData);
 
-    const response = await fetch('http://127.0.0.1:8000/book/create/', {
+    const response = await fetch('http://backend.joongobooks.com/book/create/', {
         headers: {
           'Authorization': `Bearer ${access_token}`
         },
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (data) {
           alert("도서 정보 등록이 완료되었습니다.");
           console.log("성공적으로 데이터가 전송되었습니다.");
-          window.location.replace('http://127.0.0.1:5500/assets/html/shop.html')
+          window.location.replace('http://joongobooks.com/assets/html/shop.html')
         } else {
           alert("도서 정보 등록에 실패했습니다.");
           console.log("데이터 전송 중 오류가 발생했습니다.");

@@ -13,7 +13,7 @@ signup_btn.addEventListener('click', (e) => {
         alert({'message': '비밀번호를 잘못 입력하셨습니다.'})
     }
 
-    const response = fetch('http://127.0.0.1:8000/api/user/register/', {
+    const response = fetch('http://backend.joongobooks.com/api/user/register/', {
         headers: {
             'Content-type': 'application/json',
         },
@@ -27,7 +27,7 @@ signup_btn.addEventListener('click', (e) => {
     })
     .then((res) => res.json())
     .then((res) => {
-        window.location.replace('http://127.0.0.1:5500/assets/html/login.html')
+        window.location.replace('http://joongobooks.com/assets/html/login.html')
     })
     .catch((err) => {
         alert(response.status)
