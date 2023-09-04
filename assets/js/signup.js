@@ -1,6 +1,6 @@
 const signup_btn = document.querySelector('.join-button');
 
-signup_btn.addEventListener('click', (e) => {
+signup_btn.addEventListener('click', async (e) => {
     e.preventDefault();
 
     let password = "";
@@ -10,26 +10,36 @@ signup_btn.addEventListener('click', (e) => {
     if (pwd1 == pwd2 ) {
         password = pwd1;
     } else {
-        alert({'message': '비밀번호를 잘못 입력하셨습니다.'})
+        alert('비밀번호를 잘못 입력하셨습니다.');
+        return;
     }
 
-    const response = fetch('http://backend.joongobooks.com/api/user/register/', {
-        headers: {
-            'Content-type': 'application/json',
-        },
-        method:'POST',
-        body:JSON.stringify({
-            'username' : document.getElementById('id').value,
-            'email' : document.getElementById('email').value,
-            'nickname' : document.getElementById('user-nickname').value,
-            'password' : password,
-        }),
-    })
-    .then((res) => res.json())
-    .then((res) => {
-        window.location.replace('http://joongobooks.com/assets/html/login.html')
-    })
-    .catch((err) => {
-        alert(response.status)
-    });
+    try {
+        const response = await fetch('http://backend.joongobooks.com/api/user/register/', {
+            headers: {
+                'Content-type': 'application/json',
+            },
+            method:'POST',
+            body:JSON.stringify({
+                'username' : document.getElementById('id').value,
+                'email' : document.getElementById('email').value,
+                'nickname' : document.getElementById('user-nickname').value,
+                'password' : password,
+            }),
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            alert(errorData.detail || '회원가입에 실패했습니다.');
+            return;
+        }
+
+        const res = await response.json();
+        console.log("response:", res.message);
+        
+        window.location.replace('http://127.0.0.1:5500/assets/html/login.html');
+    } catch (error) {
+        console.error(error);
+        alert('오류가 발생했습니다. 다시 시도해주세요.');
+    }
 });
