@@ -12,7 +12,7 @@ window.onload = async function() {
   const profileImg = document.getElementById('my_img')
 
   // 서버에서 프로필 이미지 URL 가져오기
-  fetch(`http://127.0.0.1:8000/api/user/profile/${userId}`, {
+  fetch(`http://backend.joongobooks.com/api/user/profile/${userId}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ window.onload = async function() {
     console.log(data.profile_img)
     if (data.profile_img) {
       // 이미지 URL이 있는 경우
-      const mediaUrl = 'http://127.0.0.1:8000';
+      const mediaUrl = 'http://backend.joongobooks.com';
       const imageUrl = mediaUrl + data.profile_img;
       console.log(imageUrl)
       profileImg.src = imageUrl
@@ -70,7 +70,7 @@ window.onload = async function() {
       formData.append('about_me', document.getElementById('aboutme').value);
 
       try {
-          const response = await fetch(`http://127.0.0.1:8000/api/user/profile/${userId}/create`, {
+          const response = await fetch(`http://backend.joongobooks.com/api/user/profile/${userId}/create`, {
               headers: {
                   'Authorization': `Bearer ${access_token}`
               },
@@ -84,7 +84,7 @@ window.onload = async function() {
           }
 
           alert("프로필이 생성되었습니다.");
-          window.location.replace('http://127.0.0.1:5500/assets/html/mypage_main.html');
+          window.location.replace('http://joongobooks.com/assets/html/mypage_main.html');
       } catch (error) {
           alert(error.message || "오류가 발생했습니다.");
           console.error(error);

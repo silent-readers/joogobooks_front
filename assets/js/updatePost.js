@@ -9,7 +9,7 @@ window.onload = async function() {
     const writer = parsed_payload.user_id;
 
     // 해당 id로 API를 호출하여 책 정보를 가져옵니다.
-    const response = await fetch(`http://127.0.0.1:8000/book/${bookId}`, { 
+    const response = await fetch(`http://backend.joongobooks.com/book/${bookId}`, { 
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${access_token}`,
@@ -20,7 +20,7 @@ window.onload = async function() {
     const bookData = await response.json();
     const bookDetailsession = document.querySelector('section');
 
-    const mediaUrl = 'http://127.0.0.1:8000';
+    const mediaUrl = 'http://backend.joongobooks.com';
     const imageUrl = mediaUrl + bookData.image;
     
     let innerHTMLContent = `
@@ -140,7 +140,7 @@ window.onload = async function() {
         formData.append('sale_condition', '판매중');
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/book/${bookData.id}/update/`, {
+            const response = await fetch(`http://backend.joongobooks.com/book/${bookData.id}/update/`, {
                 headers: {
                     'Authorization': `Bearer ${access_token}`
                 },
@@ -153,7 +153,7 @@ window.onload = async function() {
             }
 
             alert("도서 정보가 수정되었습니다.");
-            window.location.replace('http://127.0.0.1:5500/assets/html/shop.html');
+            window.location.replace('http://joongobooks.com/assets/html/shop.html');
         } catch (error) {
             alert(error.message || "오류가 발생했습니다.");
             console.error(error);

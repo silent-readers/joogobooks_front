@@ -9,7 +9,7 @@ async function searchBooks() {
     const query = searchInput.value;
 
     try {
-        const response = await fetch(`http://127.0.0.1:8000/book/search/?title=${query}&sale_condition=${condition}`);
+        const response = await fetch(`http://backend.joongobooks.com/book/search/?title=${query}&sale_condition=${condition}`);
         const data = await response.json();
 
         // results 키가 존재하고, 해당 키의 값이 배열인지 확인
@@ -57,7 +57,7 @@ function displayBooks(books) {
             <ul class="info">
             <li class="saler">판매자 : ${parsed_payload.nickname}</li>
           </ul>
-          <a class="check-item" href="http://127.0.0.1:5500/assets/html/bookdetail.html?id=${book.id}/">상품 확인하기</a>
+          <a class="check-item" href="http://joongobooks.com/assets/html/bookdetail.html?id=${book.id}/">상품 확인하기</a>
         `;
 
         bookList.appendChild(bookDiv);

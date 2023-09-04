@@ -82,14 +82,14 @@ const handlers = {
         }, 1000 * this.retry);
       } else {
         console.log("웹소켓 서버에 접속할 수 없습니다. 채팅 리스트로 이동합니다.");
-        window.location.replace('http://127.0.0.1:5500/assets/html/chatlist.html');
+        window.location.replace('http://joongobooks.com/assets/html/chatlist.html');
       }
     }
   },
 
   onerror() {
     console.log("웹소켓 서버에 접속할 수 없습니다. 채팅 리스트로 이동합니다.");
-    window.location.replace('http://127.0.0.1:5500/assets/html/chatlist.html');
+    window.location.replace('http://joongobooks.com/assets/html/chatlist.html');
   },
 
   onmessage(event) {
@@ -115,5 +115,5 @@ const handlers = {
 handlers.init();
 
 const protocol = location.protocol === "http:" ? "ws:" : "wss:";
-const ws_url = protocol + "//127.0.0.1:8000/ws/chat/" + location.pathname;
+const ws_url = protocol + "//backend.joongobooks.com/ws/chat/" + location.pathname;
 handlers.connect(ws_url);

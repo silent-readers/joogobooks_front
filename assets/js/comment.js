@@ -54,7 +54,7 @@ function createCommentElement(comment) {
 
 // 댓글 생성 함수
 async function createComment(bookId, content) {
-  const response = await fetch(`http://127.0.0.1:8000/api/book/${bookId}/comment/create/`, {
+  const response = await fetch(`http://backend.joongobooks.com/api/book/${bookId}/comment/create/`, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${access_token}`,
