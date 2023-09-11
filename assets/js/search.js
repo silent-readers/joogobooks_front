@@ -9,7 +9,7 @@ async function searchBooks() {
     const query = searchInput.value;
 
     try {
-        const response = await fetch(`http://backend.joongobooks.com/book/search/?title=${query}&sale_condition=${condition}`);
+        const response = await fetch(`http://backend.joongobooks.com/book/search/?title__icontains=${query}&sale_condition=${condition}`);
         const data = await response.json();
 
         // results 키가 존재하고, 해당 키의 값이 배열인지 확인
