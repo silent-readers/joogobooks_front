@@ -16,6 +16,9 @@ export const apiResponse = (prompt) => {
     .then((res) => {
       if (res.status === 200) {
         return res.json();
+      } else if (res.status === 429) {
+        alert('하루에 2번만 AI chatbot recommend를 이용할 수 있습니다.');
+        throw new Error('요청 제한 초과');
       } else {
         throw new Error(`API 요청에 실패했습니다. statusCode: ${res.status}`);
       }
