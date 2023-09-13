@@ -1,3 +1,6 @@
+import { backend } from "./url.js";
+import { frontend } from "./url.js";
+
 window.onload = function () {
   const payload = localStorage.getItem('payload')
   const parsed_payload = JSON.parse(payload)
@@ -12,7 +15,7 @@ window.onload = function () {
   const profileImg = document.getElementById('my_profile_img')
 
   // 서버에서 프로필 이미지 URL 가져오기
-  fetch(`http://backend.joongobooks.com/api/user/profile/${userId}`, {
+  fetch(backend + `/api/user/profile/${userId}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -22,7 +25,7 @@ window.onload = function () {
   .then(data => {
     if (data.profile_img) {
       // 이미지 URL이 있는 경우
-      const mediaUrl = 'http://backend.joongobooks.com';
+      const mediaUrl = backend;
       const imageUrl = mediaUrl + data.profile_img;
       profileImg.src = imageUrl
     } else {
@@ -36,7 +39,7 @@ window.onload = function () {
   // 프로필 생성버튼
   profile_createbtn.addEventListener("click", () => {
     
-    window.location.href=`http://joongobooks.com/assets/html/mypage.html?id=${userId}`
+    window.location.href=`${frontend}/assets/html/mypage.html?id=${userId}`
   });
 
 }

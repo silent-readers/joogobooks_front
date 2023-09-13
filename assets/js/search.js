@@ -1,3 +1,6 @@
+import { backend } from "./url.js";
+import { frontend } from "./url.js";
+
 const searchSelect = document.getElementById('header_searchSelect');
 const searchInput = document.querySelector('.header_searchInput');
 const searchButton = document.querySelector('.search-button');
@@ -9,7 +12,7 @@ async function searchBooks() {
     const query = searchInput.value;
 
     try {
-        const response = await fetch(`http://backend.joongobooks.com/book/search/?title__icontains=${query}&sale_condition=${condition}`);
+        const response = await fetch(backend + `/book/search/?title__icontains=${query}&sale_condition=${condition}`);
 
         const data = await response.json();
 
@@ -58,7 +61,7 @@ function displayBooks(books) {
             <ul class="info">
             <li class="saler">판매자 : ${parsed_payload.nickname}</li>
           </ul>
-          <a class="check-item" href="http://joongobooks.com/assets/html/bookdetail.html?id=${book.id}/">상품 확인하기</a>
+          <a class="check-item" href="${frontend}/assets/html/bookdetail.html?id=${book.id}/">상품 확인하기</a>
         `;
 
         bookList.appendChild(bookDiv);

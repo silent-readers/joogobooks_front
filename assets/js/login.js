@@ -1,3 +1,6 @@
+import { backend } from "./url.js";
+import { frontend } from "./url.js";
+
 const btn_login = document.querySelector('.btn-login');
 btn_login.addEventListener('click', async function(e) {
     e.preventDefault();
@@ -7,7 +10,7 @@ btn_login.addEventListener('click', async function(e) {
         "password" : document.getElementById('password').value,
     }
 
-    const response = await fetch('http://backend.joongobooks.com/api/user/auth/', {
+    const response = await fetch(backend+'/api/user/auth/', {
         headers: {
             'Content-type' : 'application/json',
         },
@@ -35,6 +38,6 @@ btn_login.addEventListener('click', async function(e) {
 
     localStorage.setItem("payload", jsonPayload);
 
-    window.location.replace('http://joongobooks.com/')
+    window.location.replace(frontend)
     
 });

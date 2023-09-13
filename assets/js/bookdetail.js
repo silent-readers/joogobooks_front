@@ -1,3 +1,6 @@
+import { backend } from "./url.js";
+import { frontend } from "./url.js";
+
 window.onload = async function() {
     // URL에서 id 값을 추출합니다.
     const urlParams = new URLSearchParams(window.location.search);
@@ -9,10 +12,10 @@ window.onload = async function() {
     const username = parsed_payload.user_id
 
     // 해당 id로 API를 호출하여 책 정보를 가져옵니다.
-    const response = await fetch(`http://backend.joongobooks.com/book/${bookId}`, { method: 'GET' });
+    const response = await fetch(backend+ `/book/${bookId}`, { method: 'GET' });
     const bookData = await response.json();
 
-    const mediaUrl = 'http://backend.joongobooks.com';
+    const mediaUrl = backend;
     const imageUrl = mediaUrl + bookData.image;
 
     const imgChange = document.getElementById('bookdetail-img');
@@ -64,7 +67,7 @@ window.onload = async function() {
     if (del_btn) {
         del_btn.addEventListener('click', async function(e) {
             e.preventDefault();
-            const response = await fetch(`http://backend.joongobooks.com/book/${bookData.id}/delete/`, {
+            const response = await fetch(backend + `/book/${bookData.id}/delete/`, {
                 headers: {
                     'Authorization': `Bearer ${access_token}` 
                 },
@@ -74,7 +77,7 @@ window.onload = async function() {
                 console.log(res)
                 if (res.ok) {
                     alert('해당 도서정보가 삭제되었습니다.')
-                    window.location.replace('http://joongobooks.com/assets/html/shop.html')
+                    window.location.replace(frontend + '/assets/html/shop.html')
                 } else {
                     alert('해당 정보를 삭제할 수 없습니다!');
                 }
@@ -91,7 +94,7 @@ window.onload = async function() {
             e.preventDefault();
             
             try {
-                const response = await fetch('http://backend.joongobooks.com/api/chat/new/', {
+                const response = await fetch(backend + '/api/chat/new/', {
                     method: 'POST',
                     headers: {
                         'Authorization': `Bearer ${access_token}`,
@@ -110,7 +113,7 @@ window.onload = async function() {
                 }
 
                 const chatRoomData = await response.json();
-                const chatUrl = `http://joongobooks.com/assets/html/chat.html?room_id=${chatRoomData.id}&guest_id=${bookData.writer}`;
+                const chatUrl = frontend + `/assets/html/chat.html?room_id=${chatRoomData.id}&guest_id=${bookData.writer}`;
                 
                 window.location.replace(chatUrl);
             

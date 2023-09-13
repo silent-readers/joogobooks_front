@@ -1,3 +1,6 @@
+import { backend } from "./url.js";
+import { frontend } from "./url.js";
+
 const access_token = localStorage.getItem('access_token');
 
 const changepassword_btn = document.getElementById('changepassword-btn');
@@ -24,7 +27,7 @@ changepassword_btn.addEventListener('click', async (e) => {
     };
 
     try {
-        const response = await fetch(`http://backend.joongobooks.com/api/user/auth/${user_id}/changepassword/`, {
+        const response = await fetch(`${backend}/api/user/auth/${user_id}/changepassword/`, {
             headers: {
                 'Authorization': `Bearer ${access_token}`,
                 "Content-type": "application/json",

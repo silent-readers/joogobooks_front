@@ -1,9 +1,12 @@
+import { backend } from "./url.js";
+import { frontend } from "./url.js";
+
 window.onload = async function bookList() {
   const payload = localStorage.getItem('payload')
   const parsed_payload = JSON.parse(payload)
 
 
-  const response = await fetch('http://backend.joongobooks.com/book/list/', { method: 'GET' })
+  const response = await fetch(backend + '/book/list/', { method: 'GET' })
   const response_json = await response.json()
 
   const book_list = document.getElementsByClassName('book-list')[0]; // book-list는 하나라고 가정하고 [0]으로 첫 번째 요소를 선택합니다.
@@ -12,7 +15,7 @@ window.onload = async function bookList() {
       let book = document.createElement('div');
       book.className = 'book'; // 클래스 이름을 'book'으로 설정합니다.
 
-      const mediaUrl = 'http://backend.joongobooks.com';
+      const mediaUrl = backend;
       const imageUrl = mediaUrl + bookData.image;
 
       book.innerHTML = `
@@ -34,7 +37,7 @@ window.onload = async function bookList() {
       <ul class="info">
         <li class="saler">판매자 : ${parsed_payload.nickname} <!-- 판매자 별명 정보가 없어서 그대로 두었습니다. --></li>
       </ul>
-      <a class="check-item" href="http://joongobooks.com/assets/html/bookdetail.html?id=${bookData.id}/">상품 확인하기</a>
+      <a class="check-item" href="${frontend}/assets/html/bookdetail.html?id=${bookData.id}/">상품 확인하기</a>
       </div>
       `;
 

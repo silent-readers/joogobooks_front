@@ -1,6 +1,9 @@
+import { backend } from "./url.js";
+import { frontend } from "./url.js";
+
 const token = localStorage.getItem("access_token");
 export const apiResponse = (prompt) => {
-  fetch(`http://backend.joongobooks.com/api/recommend/chatbot/`, {
+  fetch(backend + `/api/recommend/chatbot/`, {
     headers: {
       Authorization: `Bearer ${token}`,
       'Content-type': 'application/json',
