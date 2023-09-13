@@ -1,12 +1,11 @@
 .purchase {
   width: 1200px;
-  height: 75vh;
   margin: 0 auto;
   align-items: center;
 }
 
 .container {
-  padding: 20px;
+  padding: 20px 20px 100px 20px;
 }
 
 .container > h2 {
