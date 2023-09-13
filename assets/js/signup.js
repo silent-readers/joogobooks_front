@@ -1,3 +1,6 @@
+import { backend } from "./url.js";
+import { frontend } from "./url.js";
+
 const signup_btn = document.querySelector('.join-button');
 
 signup_btn.addEventListener('click', async (e) => {
@@ -15,7 +18,7 @@ signup_btn.addEventListener('click', async (e) => {
     }
 
     try {
-        const response = await fetch('http://backend.joongobooks.com/api/user/register/', {
+        const response = await fetch(backend + '/api/user/register/', {
             headers: {
                 'Content-type': 'application/json',
             },
@@ -37,7 +40,7 @@ signup_btn.addEventListener('click', async (e) => {
         const res = await response.json();
         console.log("response:", res.message);
         
-        window.location.replace('http://joongobooks.com/assets/html/login.html');
+        window.location.replace(frontend + '/assets/html/login.html');
     } catch (error) {
         console.error(error);
         alert('오류가 발생했습니다. 다시 시도해주세요.');
