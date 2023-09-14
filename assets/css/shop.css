@@ -75,7 +75,7 @@ a:-webkit-any-link {
   display: none;
 }
 
-.page_nation a {
+.page_nation button {
   display: block;
   margin: 0 3px;
   float: left;
