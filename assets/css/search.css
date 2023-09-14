@@ -93,11 +93,13 @@ option {
 
 .container {
   padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 /* page_nation */
 .page_wrap {
-  text-align: center;
+  display: inline-block;
 }
 
 .page_nation {
@@ -108,7 +110,7 @@ option {
   display: none;
 }
 
-.page_nation a {
+.page_nation button {
   display: block;
   margin: 0 3px;
   float: left;
