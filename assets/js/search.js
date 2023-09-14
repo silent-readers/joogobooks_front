@@ -6,23 +6,25 @@ const searchInput = document.querySelector('.header_searchInput');
 const searchButton = document.querySelector('.search-button');
 const bookList = document.querySelector('.book-list');
 
+let currentPage = 1; 
+
 // 검색 함수
 async function searchBooks() {
     const condition = searchSelect.value;
     const query = searchInput.value;
 
     try {
-        const response = await fetch(backend + `/book/search/?title__icontains=${query}&sale_condition=${condition}`);
+        const response = await fetch(backend + `/book/search/?title__icontains=${query}&sale_condition=${condition}&page=${currentPage}`);
 
         const data = await response.json();
 
-        // results 키가 존재하고, 해당 키의 값이 배열인지 확인
         if (data.results && Array.isArray(data.results)) {
-            displayBooks(data.results);
+            displayBooks(data.results, data.count);
         } else {
             console.error('Invalid data format:', data);
             alert('검색 결과를 가져올 수 없습니다.');
         }
+
     } catch (error) {
         console.error('Error fetching data:', error);
         alert('검색 중 오류가 발생했습니다. 다시 시도해주세요.');
@@ -30,7 +32,7 @@ async function searchBooks() {
 }
 
 // 검색 결과 표시 함수
-function displayBooks(books) {
+function displayBooks(books, totalCount) {
     const payload = localStorage.getItem('payload')
     const parsed_payload = JSON.parse(payload)
 
@@ -66,10 +68,56 @@ function displayBooks(books) {
 
         bookList.appendChild(bookDiv);
     };
+
+    displayPagination(totalCount);
 }
+
+function displayPagination(totalCount) {
+    // Pagination btn 처리하기
+    const paginationDiv = document.getElementsByClassName('page_nation')[0];
+    paginationDiv.innerHTML = "";
+
+    // p-previous button
+    const pprevBtn = document.createElement('button');
+    pprevBtn.classList.add('pprev');
+    pprevBtn.onclick = () => { currentPage = 1; searchBooks(); };
+    paginationDiv.appendChild(pprevBtn);
+
+    // previous button
+    const prevBtn = document.createElement('button');
+    prevBtn.classList.add('prev');
+    prevBtn.onclick = () => { currentPage--; searchBooks(currentPage); };
+    paginationDiv.appendChild(prevBtn);
+
+    // 페이지 번호 버튼
+    const totalPageCount = Math.ceil(totalCount / 5);
+    console.log(totalPageCount);
+
+    for (let i = 1; i <= totalPageCount; i++) {
+      const pageBtn = document.createElement('button');
+      pageBtn.classList.add('page-btn');
+      pageBtn.innerText = i;
+      pageBtn.onclick = () => { currentPage = i; searchBooks(currentPage); };
+      paginationDiv.appendChild(pageBtn);
+    }
+
+    // next button
+    const nextBtn = document.createElement('button');
+      nextBtn.classList.add('next');
+      nextBtn.onclick = () => { currentPage++; searchBooks(currentPage); };
+      paginationDiv.appendChild(nextBtn);
+
+    // n-next button
+    const nnextBtn = document.createElement('button');
+    nnextBtn.classList.add('nnext');
+    nnextBtn.onclick = () => { currentPage = totalPageCount; searchBooks(); };
+    paginationDiv.appendChild(nnextBtn);
+}
+
 
 // 검색 버튼 이벤트 리스너
 searchButton.addEventListener('click', (e) => {
     e.preventDefault();
+    currentPage = 1;
     searchBooks();
 });
