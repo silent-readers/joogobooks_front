@@ -26,7 +26,7 @@ document.getElementById("confirm-button").addEventListener("click", function () 
       } else {
         // 비밀번호 변경 폼을 표시하고, 아이디 입력란을 비활성화
         document.getElementById("password-change-form").style.display = "block";
-        document.getElementById("ID").disabled = true;
+        document.getElementById("input-id-form").style.display = "none";
       }
     })
     .catch(function (error) {
