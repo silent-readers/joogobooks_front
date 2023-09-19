@@ -40,7 +40,7 @@ window.onload = async function bookList() {
         </ul>
       </div>
       <ul class="info">
-        <li class="saler">판매자 : ${parsed_payload.nickname} <!-- 판매자 별명 정보가 없어서 그대로 두었습니다. --></li>
+        <li class="saler">판매자 : ${bookData.writer_nickname}</li>
       </ul>
       <a class="check-item" href="${frontend}/assets/html/bookdetail.html?id=${bookData.id}/">상품 확인하기</a>
       </div>
