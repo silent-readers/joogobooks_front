@@ -33,31 +33,117 @@
         </div>
       </nav>
     </header>
+
     <section>
       <div class="side-menu">
-        <ul class="profile">
-          <h2>Profile</h2>
+        <div class="side-menu-profile">
+          <div class="profile_img">
+            <img id="my_profile_img"class="profile img" alt="profile" />
+          </div>
+          <div class="userinfo">
+            <h2 class="username" id="profile-id"></h2>
+            <p id="aboutme" class="aboutme"></p>
+          </div>
+          <div class="form-group">
+            <button id="profile-btn" class="profile-btn" type="submit">프로필 변경</button>
+          </div>
+        </div>
+        <ul class="history-list">
+          <h2 class="history-list-title">History</h2>
           <ul class="menu-list">
-            <li class="present"><a href="./mypage.html">Profile 설정</a></li>
+            <li class="present">
+              <a href="#">등록한 책 목록</a>
+            </li>
             <li>
-              <a href="./changePassword.html">비밀번호 변경</a>
+              <a href="#">찜 목록</a>
+            </li>
+            <li>
+              <a href="#">채팅 목록</a>
             </li>
           </ul>
         </ul>
       </div>
-      <div id="user-profile" class="user-profile">
-        <div class="profile_img">
-            <img id="my_profile_img"class="profile img" alt="profile" />
+      <div class="user-history-list">
+        <h2>내가 등록한 책 목록</h2>
+          <div class="create-book-list">
+          <table>
+            <colgroup>
+              <col style="width: 60px;">
+              <col style="width: 400px;">
+              <col style="width: 120px;">
+              <col style="width: 150px;">
+              <col style="width: 150px;">
+            </colgroup>
+            <thead>
+              <th>번호</th>
+              <th>책 제목</th>
+              <th>저자</th>
+              <th>등록일자</th>
+              <th>판매상태</th>
+            </thead>
+            <tbody class="create-list">
+              <tr>
+                <td>1</td>
+                <td>Django를 잘 사용할 수 있는 방법</td>
+                <td>Django</td>
+                <td>2023.09.15</td>
+                <td>판매중</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Django를 잘 사용할 수 있는 방법</td>
+                <td>Django</td>
+                <td>2023.09.15</td>
+                <td>판매중</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Django를 잘 사용할 수 있는 방법</td>
+                <td>Django</td>
+                <td>2023.09.15</td>
+                <td>판매중</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Django를 잘 사용할 수 있는 방법</td>
+                <td>Django</td>
+                <td>2023.09.15</td>
+                <td>판매중</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="userinfo">
-          <h2 class="username" id="profile-id"></h2>
-          <h4 id="profile-email" class="profile-email"></h4>
-        </div>
-        <div class="form-group">
-          <button id="profile-btn" class="profile-btn" type="submit">프로필 생성</button>
+        <h2>찜 목록</h2>
+        <div class="jjim-book-list">
+          <table>
+            <colgroup>
+              <col style="width: 60px;">
+              <col style="width: 400px;">
+              <col style="width: 120px;">
+              <col style="width: 150px;">
+              <col style="width: 150px;">
+            </colgroup>
+            <thead>
+              <th>번호</th>
+              <th>책 제목</th>
+              <th>저자</th>
+              <th>등록일자</th>
+              <th>판매상태</th>
+            </thead>
+            <tbody class="jjim-list">
+              <tr>
+                <td>1</td>
+                <td>Django를 잘 사용할 수 있는 방법</td>
+                <td>Django</td>
+                <td>2023.09.15</td>
+                <td>판매중</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
+
     <footer class="footer">
       <p>&copy; 2023, joongo-readers. All rights reserved.</p>
     </footer>

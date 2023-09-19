@@ -1,7 +1,9 @@
+body {
+  height: 100%;
+}
 section {
   width: 100%;
-  margin: 20px auto;
-  height: 60vh;
+  margin: 20px auto 90px;
   display: flex;
   justify-content: center;
 }
@@ -15,44 +17,20 @@ ul, li, a {
 /* side menu ---------------------------- */
 .side-menu {
   width: 25%;
-  height: 140px;
-  margin: 142px 50px 142px;
+  margin-left: 30px;
+  padding-right: 30px;
   border-right: 1px solid gray;
 }
 
-.profile {
-  margin-bottom: 20px;
-}
-
-.profile > h2 {
-  font-size: 35px;
-  padding-bottom: 10px;
-}
-
-.menu-list > li {
-  margin-left: 30px;
-  color: #000;
-  padding-bottom: 10px;
-  cursor: pointer;
-}
-
-.menu-list > li:hover {
-  color: rgb(255, 0, 157);
-}
-
-
-/* profile content ---------------------------- */
-.user-profile {
-  width: 75%;
-  padding: 30px;
+.side-menu-profile{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .profile_img > img {
-  width: 200px;
-  padding-top: 20px;
+  width: 170px;
 }
 
 .userinfo {
@@ -63,14 +41,18 @@ ul, li, a {
 }
 
 .username {
-  font-size: 60px;
+  font-size: 35px;
   margin-bottom: 5px;
+}
+
+.aboutme {
+  color: rgb(161, 161, 161);
 }
 
 .profile-btn {
   background-color: #449fb1;
-  width: 300px;
-  height: 35px;
+  width: 120px;
+  height: 45px;
   border: 0;
   border-radius: 10px;
   color: white;
@@ -80,3 +62,100 @@ ul, li, a {
 .profile-btn:hover {
   background-color: #275c66;
 }
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  border-top: 1px solid #556080
+
+}
+
+.history-list-title{
+  font-size: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.menu-list {
+  text-decoration: none;
+}
+
+.menu-list > li {
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.menu-list li a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu-list li a:hover {
+  color: rgb(43, 108, 206);
+}
+
+
+/* profile content ---------------------------- */
+.user-history-list {
+  width: 75%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-history-list > h2 {
+  padding: 20px 0;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: rgb(192, 190, 190);
+  height: 45px;
+}
+
+td{
+  height: 40px;
+}
+
+.create-book-list {
+  height: 50%;
+  overflow: scroll;
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
+}
+
+.create-book-list::-webkit-scrollbar {
+  /* ( 크롬, 사파리, 오페라, 엣지 ) 동작 */
+  display: none;
+}
+
+.create-list, .jjim-list{
+  text-align: center;
+}
+
+.create-list tr td:nth-child(2){
+  text-align: left;
+  padding-left : 20px;
+}
+
+.jjim-book-list{
+  height: 50%;
+  overflow: hidden;
+}
+
+.jjim-list tr td:nth-child(2){
+  text-align: left;
+  padding-left: 20px;
+}
+
+
+
+
+
