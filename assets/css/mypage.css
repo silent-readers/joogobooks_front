@@ -1,7 +1,9 @@
+body {
+  height: 100%;
+}
 section {
   width: 100%;
-  margin: 20px auto;
-  height: 60vh;
+  margin: 20px auto 90px;
   display: flex;
   justify-content: center;
 }
@@ -15,43 +17,12 @@ ul, li, a {
 /* side menu ---------------------------- */
 .side-menu {
   width: 25%;
-  height: 140px;
-  margin: 142px 50px 142px;
+  margin-left: 30px;
+  padding-right: 30px;
   border-right: 1px solid gray;
 }
 
-.profile {
-  margin-bottom: 20px;
-}
-
-.profile > h2 {
-  font-size: 35px;
-  padding-bottom: 10px;
-}
-
-.menu-list > li {
-  margin-left: 30px;
-  color: #000;
-  padding-bottom: 10px;
-  cursor: pointer;
-}
-
-.menu-list > li:hover {
-  color: rgb(255, 0, 157);
-}
-
-
-/* profile content ---------------------------- */
-.user-profile {
-  width: 75%;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.profile-container{
+.side-menu-profile{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,22 +30,7 @@ ul, li, a {
 }
 
 .profile_img > img {
-  width: 150px;
-  padding-top: 20px;
-}
-
-.fileInput {
-  display: none;
-}
-
-#attachImageButton {
-  background-color: #6ac1d3;
-  width: 150px;
-  height: 30px;
-  border: 0;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
+  width: 170px;
 }
 
 .userinfo {
@@ -85,40 +41,18 @@ ul, li, a {
 }
 
 .username {
-  text-align: center;
-  font-size: 20px;
-  margin: 10px 0;
+  font-size: 35px;
+  margin-bottom: 5px;
 }
 
-.userinfo {
-  margin-top: 20px;
-}
-
-.form-group ul {
-  width: 100%;
-  height: 45px;
-}
-
-.form-group li {
-  float: left;
-}
-
-.form-group li:first-child {
-  width: 100px;
-  padding: 10px 0 0 0;
-}
-
-.form-group li input {
-  width: 200px;
-  height: 34px;
-  background-color: #d5dddfd2;
-  border: none;
+.aboutme {
+  color: rgb(161, 161, 161);
 }
 
 .profile-btn {
   background-color: #449fb1;
-  width: 300px;
-  height: 35px;
+  width: 120px;
+  height: 45px;
   border: 0;
   border-radius: 10px;
   color: white;
@@ -127,4 +61,153 @@ ul, li, a {
 
 .profile-btn:hover {
   background-color: #275c66;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  border-top: 1px solid #556080
+
+}
+
+.history-list-title{
+  font-size: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.menu-list {
+  text-decoration: none;
+}
+
+.menu-list > li {
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.menu-list li a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu-list li a:hover {
+  color: rgb(43, 108, 206);
+}
+
+
+/* profile content ---------------------------- */
+.user-profile {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.my_profile{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 70px;
+}
+
+.my-profile-img {
+  width: 300px;
+  padding: 20px;
+}
+
+.fileInput {
+  display: none;
+}
+
+#attachImageButton {
+  background-color: #59a2b1;
+  width: 150px;
+  height: 40px;
+  border: 0;
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
+}
+
+#attachImageButton:hover {
+  background-color: #6ac1d3;
+}
+
+.user-info {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group ul {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 25px;
+}
+
+.form-group li {
+  float: left;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.form-group li:first-child {
+  width: 110px;
+  padding: 10px 0 0 0;
+}
+
+.form-group li input {
+  width: 300px;
+  height: 45px;
+  padding: 10px;
+  background-color: #d5dddfd2;
+  border: none;
+}
+
+.profile-update-btn {
+  background-color: #449fb1;
+  width: 420px;
+  height: 40px;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.profile-update-btn:hover {
+  background-color: #6ac1d3;
+}
+
+.update-group {
+  margin-top: 10px;
+  padding: 0 35px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.update-group > a {
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+}
+
+.update-group > a:hover {
+  color: #275c66
 }

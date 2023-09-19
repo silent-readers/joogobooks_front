@@ -35,63 +35,81 @@
     </header>
     <section>
       <div class="side-menu">
-        <ul class="profile">
-          <h2>Profile</h2>
+        <div class="side-menu-profile">
+          <div class="profile_img">
+            <img id="my_profile_img"class="profile img" alt="profile" />
+          </div>
+          <div class="userinfo">
+            <h2 class="username" id="profile-id"></h2>
+            <p id="aboutme" class="aboutme"></p>
+          </div>
+          <div class="form-group">
+            <button id="profile-btn" class="profile-btn" type="submit">프로필 변경</button>
+          </div>
+        </div>
+        <ul class="history-list">
+          <h2 class="history-list-title">History</h2>
           <ul class="menu-list">
-            <li class="present"><a href="./mypage.html">Profile 설정</a></li>
+            <li class="present">
+              <a href="#">등록한 책 목록</a>
+            </li>
             <li>
-              <a href="./changePassword.html">비밀번호 변경</a>
+              <a href="#">찜 목록</a>
+            </li>
+            <li>
+              <a href="#">채팅 목록</a>
             </li>
           </ul>
         </ul>
       </div>
+
       <div id="user-profile" class="user-profile">
         <form class="profile-container">
-          <div class="profile_img">
-            <input
-              type="file"
-              id="imageInput"
-              accept="image/*"
-              class="fileInput"
-            />
-            <img id="my_img"class="profile img" alt="profile" />
+          <div class="my_profile">
+            <input type="file" id="imageInput" accept="image/*" class="fileInput"/>
+            <img id="my_img" class="my-profile-img" alt="profile"/>
             <div class="input-imgbtn">
               <button id="attachImageButton">이미지 변경하기</button>
             </div>
-            <p class="username" id="profile-id"></p>
-        </div>
-        <div class="userinfo">
-          <div class="form-group">
-            <ul>
-              <li>nickname</li>
-              <li>
-                <input
-                  type="text"
-                  id="nickname"
-                  name="nickname"
-                  placeholder="  닉네임"
-                  required
-                />
-              </li>
-            </ul>
-            <ul>
-              <li>About Me</li>
-              <li>
-                <input
-                  type="text"
-                  id="aboutme"
-                  name="aboutme"
-                  placeholder="  본인 정보"
-                  required
-                />
-              </li>
-            </ul>
           </div>
-        </div>
-        <div class="form-group">
-          <button id="profile-putbtn" class="profile-btn" type="submit">프로필 생성</button>
-        </div>
-      </form>
+          <div class="user-info">
+            <div class="form-group">
+              <ul>
+                <li>nickname</li>
+                <li>
+                  <input
+                    type="text"
+                    id="nickname"
+                    name="nickname"
+                    placeholder="  닉네임"
+                    required
+                  />  
+                </li>
+              </ul>
+              <ul>
+                <li>About Me</li>
+                <li>
+                  <input
+                    type="text"
+                    id="aboutme2"
+                    name="aboutme2"
+                    placeholder="  본인 정보"
+                    required
+                  />
+                </li>
+              </ul>
+            </div>
+            <div class="form-group">
+              <button id="profile-putbtn" class="profile-update-btn" type="submit">프로필 수정</button>
+            </div>
+            <div class="update-group">
+              <a href="./changePassword.html">비밀번호 변경</a>
+              <a href="#">회원탈퇴</a>
+            </div>
+          </div>
+        </form>
+      </div>
+
     </section>
     <footer class="footer">
       <p>&copy; 2023, joongo-readers. All rights reserved.</p>
