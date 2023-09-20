@@ -11,31 +11,20 @@ const nickname = document.getElementById('profile-id');
 const aboutMeInput = document.getElementById('aboutme2');
 const aboutMe = document.getElementById('aboutme');
 const profileUpdateButton = document.getElementById('profile-putbtn');
-const attachImageButton = document.getElementById('attachImageButton'); // 이미지 변경 버튼 추가
-
-// 이미지 변경 버튼 클릭 시 파일 업로드 창 열기
-attachImageButton.addEventListener('click', () => {
-  imageInput.click();
-});
 
 // 이미지 선택 시 미리보기 업데이트
 imageInput.addEventListener('change', () => {
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    profileImg.src = e.target.result;
+  };
+
   if (imageInput.files.length > 0) {
-    const selectedFile = imageInput.files[0];
-    const reader = new FileReader();
+    reader.readAsDataURL(imageInput.files[0]);
+    console.log(imageInput.files[0]);
+  };
 
-    reader.onload = function(e) {
-      profileImg.src = e.target.result;
-    };
-
-    reader.readAsDataURL(selectedFile);
-
-  } else {
-    console.log('파일이 선택되지 않았습니다.');
-  }
 });
-
-console.log(imageInput.files);
 
 // 사용자 정보를 불러오는 함수
 async function loadUserProfile() {

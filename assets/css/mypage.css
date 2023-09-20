@@ -128,14 +128,13 @@ ul, li, a {
   padding: 20px;
 }
 
-.fileInput {
+input[type=file] {
   display: none;
 }
 
 #attachImageButton {
   background-color: #59a2b1;
-  width: 150px;
-  height: 40px;
+  padding: 10px;
   border: 0;
   border-radius: 7px;
   color: white;
