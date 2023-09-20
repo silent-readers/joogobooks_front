@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const payload = localStorage.getItem('payload');
     const parsed_payload = JSON.parse(payload)
     const writer = parsed_payload.user_id;
+    const date = new Date().toISOString();
 
     formData.append('image', imageInput.files[0]);
     formData.append('title', document.getElementById('titleInput').value);
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     formData.append('selling_price', document.getElementById('salePriceInput').value);
     formData.append('detail_info', document.getElementById('detailInfo').value);
     formData.append('sale_condition', '판매중');
+    formData.append('uploaded_at', date);
 
     console.log(formData);
 

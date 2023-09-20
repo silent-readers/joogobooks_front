@@ -124,6 +124,8 @@ window.onload = async function() {
     });
 
     const register = document.getElementById('register');
+
+    const date = new Date().toISOString();
    
     register.addEventListener('click', async function(e) {
         e.preventDefault();
@@ -141,6 +143,7 @@ window.onload = async function() {
         formData.append('selling_price', document.getElementById('salePriceInput').value);
         formData.append('detail_info', document.getElementById('detailInfo').value);
         formData.append('sale_condition', '판매중');
+        formData.append('uploaded_at', date);
 
         try {
             const response = await fetch(backend + `/book/${bookData.id}/update/`, {
