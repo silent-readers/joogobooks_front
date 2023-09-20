@@ -155,18 +155,38 @@ a:-webkit-any-link {
 .book-sale-condition {
   font-size: 17px;
   font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  margin: 0 10px;
+}
+
+.sale-green {
+  background-color: rgb(90, 175, 90);
+}
+
+.sale-orange {
+  background-color: rgb(214, 150, 30);
+}
+
+.sale-red {
+  background-color: rgb(173, 31, 31);
 }
 
 .book img {
   width: 80px;
   height: 90px;
   height: auto;
-  margin: 0 25px;
+  margin: 0 30px;
 }
 
 .book-details {
-  width: 45%;
-  margin: 0 10px;
+  width: 35%;
+  margin: 0 25px;
+}
+
+.book-name {
+  font-weight: bold;
 }
 
 .book-info {
@@ -181,6 +201,7 @@ a:-webkit-any-link {
 .book-info li {
   list-style: none;
   font-size: 12px;
+  margin-bottom: 5px;
 }
 
 .book-status li {
@@ -210,9 +231,10 @@ ul.info {
   margin-right: 10px;
 }
 
-.saler {
+.selling-price{
+  font-weight: bold;
   margin-top: 5px;
-  font-size: 15px;
+  font-size: 18px;
   text-align: center;
 }
 
