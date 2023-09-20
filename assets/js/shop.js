@@ -23,9 +23,26 @@ window.onload = async function bookList() {
       const mediaUrl = backend;
       const imageUrl = mediaUrl + bookData.image;
 
+      let saleConditionClass = ''; // 판매 조건에 따른 클래스 이름을 저장하기 위한 변수
+
+      // 판매 조건에 따라 클래스 이름 설정
+      switch (bookData.sale_condition_display) {
+        case '판매중':
+          saleConditionClass = 'sale-green';
+          break;
+        case '판매진행중':
+          saleConditionClass = 'sale-orange';
+          break;
+        case '판매완료':
+          saleConditionClass = 'sale-red';
+          break;
+        default:
+          break;
+      }
+
       book.innerHTML = `
       <p class="book-index">${bookData.id}</p>
-      <p class="book-sale-condition">${bookData.sale_condition_display}</p>
+      <p id="book-sale-condition" class="book-sale-condition ${saleConditionClass}">${bookData.sale_condition_display}</p>
       <img src="${imageUrl}" alt="Book Cover" />
       <div class="book-details">
         <p class="book-name">${bookData.title}</p>
@@ -37,11 +54,12 @@ window.onload = async function bookList() {
         <ul class="book-status">
           <li class="book3">상태 : ${bookData.condition}</li>
           <li class="book3">원가 : ${bookData.original_price}원</li>
-          <li>판매가 : ${bookData.selling_price}원</li>
+          <li class="book3">판매자 : ${bookData.writer_nickname}</li>
         </ul>
       </div>
       <ul class="info">
-        <li class="saler">판매자 : ${bookData.writer_nickname}</li>
+        <li class="selling-price">판매가 : ${bookData.selling_price}원</li>
+        
       </ul>
       <a class="check-item" href="${frontend}/assets/html/bookdetail.html?id=${bookData.id}/">상품 확인하기</a>
       </div>
