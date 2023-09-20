@@ -12,9 +12,10 @@ let currentPage = 1;
 async function searchBooks() {
     const condition = searchSelect.value;
     const query = searchInput.value;
+    const conditionQuery = condition === '전체' ? '' : `&sale_condition=${condition}`;
 
     try {
-        const response = await fetch(backend + `/book/search/?title__icontains=${query}&sale_condition=${condition}&page=${currentPage}`);
+        const response = await fetch(backend + `/book/search/?title__icontains=${query}${conditionQuery}&page=${currentPage}`);
 
         const data = await response.json();
 
@@ -38,14 +39,20 @@ function displayBooks(books, totalCount) {
 
     bookList.innerHTML = ''; 
     
-    for (const book of books) {
+    const itemsPerPage = 5;
+    const startNumber = (currentPage - 1) * itemsPerPage + 1;
+
+    for (let i = 0; i < books.length; i++) {
+        const book = books[i];
         const bookDiv = document.createElement('div');
         bookDiv.className = 'book';
 
-        console.log(book)
+        // 현재 글 번호 계산
+        const currentNumber = startNumber + i;
+
         bookDiv.innerHTML = `
             <ul class="number_list">
-                <li class="number_item">${book.sale_condition}</li>
+                <li class="number_item">${currentNumber}</li>
             </ul>
             <img src="${book.image}" alt="Book Cover" /> 
             <div class="book-details">

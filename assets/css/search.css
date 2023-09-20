@@ -162,10 +162,7 @@ option {
   font-size: 14px;
 }
 
-.number_item::before {
-  counter-increment: number 1;
-  content: " " counter(number) " ";
-}
+
 
 /* book */
 .book-list {
