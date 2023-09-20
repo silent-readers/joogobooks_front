@@ -24,14 +24,15 @@ window.onload = async function bookList() {
       const imageUrl = mediaUrl + bookData.image;
 
       book.innerHTML = `
-      <input type="checkbox" class="checkbox">
+      <p class="book-index">${bookData.id}</p>
+      <p class="book-sale-condition">${bookData.sale_condition_display}</p>
       <img src="${imageUrl}" alt="Book Cover" />
       <div class="book-details">
         <p class="book-name">${bookData.title}</p>
         <ul class="book-info">
           <li class="book2">${bookData.author} 저</li>
           <li class="book2">${bookData.publisher}</li>
-          <li>EST Soft</li>
+          <li class="upload-date">등록일 : ${bookData.uploaded_at}</li>
         </ul>
         <ul class="book-status">
           <li class="book3">상태 : ${bookData.condition}</li>
