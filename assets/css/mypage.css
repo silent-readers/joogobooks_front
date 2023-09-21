@@ -3,7 +3,8 @@ body {
 }
 section {
   width: 100%;
-  margin: 110px auto 90px;
+  margin: 0 auto;
+  padding: 120px 0;
   display: flex;
   justify-content: center;
 }
