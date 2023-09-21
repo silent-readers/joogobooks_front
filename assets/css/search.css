@@ -1,18 +1,19 @@
+a {
+  text-decoration: none;
+}
+
 .search-container {
   background-color: white;
-  padding: 20px;
+  padding-top: 110px;
   border-radius: 8px;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: -30px;
 }
 
 .search-container h1 {
   font-size: 60px;
-  margin-bottom: 20px;
 }
 .search-container P {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .header_searchGroup {
@@ -92,7 +93,7 @@ option {
 }
 
 .container {
-  padding: 20px;
+  padding: 5px;
   display: flex;
   justify-content: center;
 }
@@ -168,6 +169,7 @@ option {
 .book-list {
   width: 1000px;
   margin: 0 auto;
+  padding-bottom: 110px;
 }
 
 .book {
@@ -176,16 +178,19 @@ option {
   justify-content: space-around;
 }
 
+.number_list{
+  width: 5%;
+}
 
 .book img {
-  max-width: 8%;
+  width: 8%;
   max-height: 90px;
   margin-left: 30px;
   margin-top: 40px;
 }
 
 .book-details {
-  width: 40%;
+  width: 45%;
   margin-left: 40px;
   margin-top: 35px;
 }
@@ -219,6 +224,10 @@ option {
   margin-top: 5px;
 }
 
+.info {
+  width: 25%;
+}
+
 .info li {
   list-style: none;
   margin-left: 70px;
@@ -249,6 +258,8 @@ ul.info {
 }
 
 .check-item {
+  width: 150px;
+  text-align: center;
   list-style-type: none;
   background-color: #449fb1;
   color: white;

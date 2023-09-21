@@ -8,7 +8,8 @@ body {
 main {
 	flex-grow: 1;
 	width: 950px;
-	margin: auto;
+	margin: 0 auto;
+    padding-top: 110px;
 }
 
 .sr-only{
