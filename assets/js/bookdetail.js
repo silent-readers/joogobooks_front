@@ -14,6 +14,7 @@ window.onload = async function() {
     // 해당 id로 API를 호출하여 책 정보를 가져옵니다.
     const response = await fetch(backend+ `/book/${bookId}`, { method: 'GET' });
     const bookData = await response.json();
+    console.log(bookData)
 
     const mediaUrl = backend;
     const imageUrl = mediaUrl + bookData.image;
@@ -39,7 +40,7 @@ window.onload = async function() {
             <li>판매가 : ${bookData.selling_price}원 (정가 : ${bookData.original_price}원)</li>
         </ul>
         <ul class="bookdetail-sailer">
-            <li>판매자 : ${parsed_payload.nickname}</li>
+            <li>판매자 : ${bookData.writer_nickname}</li>
         </ul>
         <ul class="bookdetail-about">
             <li>${bookData.detail_info}</li>
