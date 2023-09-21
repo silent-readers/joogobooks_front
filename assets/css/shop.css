@@ -5,7 +5,8 @@
 }
 
 .container {
-  padding: 20px 20px 100px 20px;
+  width: 100%;
+  padding: 110px 20px 100px 20px;
 }
 
 .container > h2 {
