@@ -1,7 +1,7 @@
 section {
   width: 1200px;
   margin: 0 auto;
-  padding-top: 120px;
+  padding-top: 125px;
 }
 
 .bookdetail_content {
@@ -18,7 +18,7 @@ section {
 }
 
 .bookdetail-img > img {
-  max-width: 350px;
+  max-width: 340px;
   max-height: 500px;  
 }
 
