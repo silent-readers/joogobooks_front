@@ -1,18 +1,20 @@
-.createbook_title {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: 10px 0;
-}
-
 section {
   width: 1200px;
-  height: 65vh;
-  margin: 0 auto 80px;
+  padding: 110px 0;
+  margin: 0 auto;
+}
+
+.createbook_title {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.createbook_title > h1 {
+  text-align: center;
+}
+
+.book-content{
   display: flex;
-  justify-content: space-between;
-  overflow: scroll;
 }
 
 .left-section {
@@ -33,8 +35,8 @@ section {
 }
 
 .book-cover {
-  height: 380px;
-  width: 280px;
+  height: 420px;
+  width: 320px;
   display: flex;
   justify-content: center;
   

@@ -27,77 +27,82 @@ window.onload = async function() {
     const imageUrl = mediaUrl + bookData.image;
     
     let innerHTMLContent = `
-    <div class="left-section">
-    <div class="img-group">
-      <h2>이미지 첨부하기</h2>
-      <input
-        type="file"
-        id="imageInput"
-        accept="image/*"
-        class="fileInput"
-      />
-      <img id="book-cover" class=book-cover src="${imageUrl}">
-      <div class="input-group">
-        <button id="attachImageButton">사진 첨부하기</button>
+    <div class="createbook_title">
+      <h1>책 정보 수정하기</h1>
+    </div>
+    <div class="book-content">
+      <div class="left-section">
+        <div class="img-group">
+          <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+            class="fileInput"
+          />
+          <img id="book-cover" class=book-cover src="${imageUrl}">
+          <div class="input-group">
+            <button id="attachImageButton">사진 첨부하기</button>
+          </div>
+        </div>
+      </div>
+      <div class="right-section">
+        <form class="form-group">
+          <ul>
+            <li class="input-group">책 제목</li>
+            <li>
+              <input type="text" id="titleInput" value='${bookData.title}'/>
+            </li>
+          </ul>
+          <ul>
+            <li class="input-group">저자</li>
+            <li>
+              <input type="text" id="authorInput" value='${bookData.author}'/>
+            </li>
+          </ul>
+          <ul>
+            <li class="input-group">출판사</li>
+            <li>
+              <input type="text" id="publisherInput" value='${bookData.publisher}'/>
+            </li>
+          </ul>
+          <ul>
+            <li class="select-group">책 상태</li>
+            <li>
+              <select id="actionSelect" >
+                <option value="최상">최상</option>
+                <option value="상">상</option>
+                <option value="중">중</option>
+                <option value="하">하</option>
+                <option value="최하">최하</option>
+              </select>
+            </li>
+          </ul>
+          <ul>
+            <li class="input-group">정가</li>
+            <li>
+              <input type="text" id="regularPriceInput" value='${bookData.original_price}'/>
+            </li>
+          </ul>
+          <ul>
+            <li class="input-group">판매가</li>
+            <li>
+              <input type="text" id="salePriceInput" value='${bookData.selling_price}'/>
+            </li>
+          </ul>
+          <ul>
+            <li class="input-group">책 상태</li>
+            <li>
+                <p>
+                    <textarea id="detailInfo" placeholder="예) 첫장에 낙서가 있지만, 그 외에는 다 괜찮습니다.">${bookData.detail_info}</textarea>
+                </p>
+            </li>
+        </ul>
+        <div class="button-group">
+            <button id="register">수정하기</button>
+        </div>
+        </form>
       </div>
     </div>
-  </div>
-  <div class="right-section">
-    <form class="form-group">
-      <ul>
-        <li class="input-group">책 제목</li>
-        <li>
-          <input type="text" id="titleInput" value='${bookData.title}'/>
-        </li>
-        <ul>
-          <li class="input-group">저자</li>
-          <li>
-            <input type="text" id="authorInput" value='${bookData.author}'/>
-          </li>
-        </ul>
-        <ul>
-          <li class="input-group">출판사</li>
-          <li>
-            <input type="text" id="publisherInput" value='${bookData.publisher}'/>
-          </li>
-        </ul>
-        <ul>
-          <li class="select-group">책 상태</li>
-          <li>
-            <select id="actionSelect" >
-              <option value="최상">최상</option>
-              <option value="상">상</option>
-              <option value="중">중</option>
-              <option value="하">하</option>
-              <option value="최하">최하</option>
-            </select>
-          </li>
-        </ul>
-        <ul>
-          <li class="input-group">정가</li>
-          <li>
-            <input type="text" id="regularPriceInput" value='${bookData.original_price}'/>
-          </li>
-        </ul>
-        <ul>
-          <li class="input-group">판매가</li>
-          <li>
-            <input type="text" id="salePriceInput" value='${bookData.selling_price}'/>
-          </li>
-        </ul>
-        <ul>
-          <li class="input-group">책 상태</li>
-          <li>
-              <p>
-                  <textarea id="detailInfo" placeholder="예) 첫장에 낙서가 있지만, 그 외에는 다 괜찮습니다.">${bookData.detail_info}</textarea>
-              </p>
-          </li>
-      </ul>
-      <div class="button-group">
-          <button id="register">수정하기</button>
-      </div>
-    </form>
-  </div>
     `;
 
     bookDetailsession.innerHTML = innerHTMLContent;
