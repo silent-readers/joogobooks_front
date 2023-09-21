@@ -68,7 +68,7 @@ function displayBooks(books, totalCount) {
                 </ul>
             </div>
             <ul class="info">
-            <li class="saler">판매자 : ${parsed_payload.nickname}</li>
+            <li class="saler">판매자 : ${book.writer_nickname}</li>
           </ul>
           <a class="check-item" href="${frontend}/assets/html/bookdetail.html?id=${book.id}/">상품 확인하기</a>
         `;
