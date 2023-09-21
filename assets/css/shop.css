@@ -42,7 +42,7 @@ a:-webkit-any-link {
   text-align: center;
 }
 
-.filter-buttons button {
+.filter-buttons .filter-button {
   background-color: #f4f4f4;
   border: none;
   padding: 5px 10px;
@@ -52,14 +52,19 @@ a:-webkit-any-link {
   display: inline-block;
 }
 
-.filter-buttons button a {
+.filter-buttons .filter-button a {
   text-decoration: none;
   color: inherit;
   font-size: 5px;
 }
 
-.filter-buttons button:hover {
+.filter-buttons .filter-button:hover {
   background-color: #bbbcc2;
+}
+
+.nodata-text{
+  margin-top: 20px;
+  text-align: center;
 }
 
 /* page_nation */
