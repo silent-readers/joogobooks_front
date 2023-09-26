@@ -2,6 +2,7 @@ import { backend } from "./url.js";
 import { frontend } from "./url.js";
 
 window.onload = async function bookReviewList() {
+  const access = localStorage.getItem('access_token');
   let curPage = 1;
   let response_json;
 
@@ -71,6 +72,19 @@ window.onload = async function bookReviewList() {
   }
 
   fetchBookReviewList(curPage);
+
+  // 서평등록 button event
+  const createReviewButton = document.querySelector('.review-create-btn');
+
+  if (!access) {
+    createReviewButton.addEventListener('click', () => {
+      location.href="../html/login.html";
+    });
+  } else {
+    createReviewButton.addEventListener('click', () => {
+      location.href="../html/createBookReview.html";
+    });
+  };
 
   // filter-btn 전체
   document.querySelector('.all').addEventListener('click', () => {
