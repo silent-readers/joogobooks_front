@@ -13,7 +13,7 @@
     <header class="navbar">
       <nav>
         <div class="nav-container">
-          <a href="../html/authenticationView.html">
+          <a href="/index.html">
             <img class="logo" src="../img/books.png" alt="logo" />
           </a>
           <div class="menu-container">
@@ -44,27 +44,55 @@
         <div class="bookreview-category">
             <h2>Category</h2>
             <div class="category-content">
-                <a class="filter-button" href="#">사회 정치</a>
-                <a class="filter-button" href="#">소설/시/희곡</a>
-                <a class="filter-button" href="#">어린이</a>
-                <a class="filter-button" href="#">여행</a>
-                <a class="filter-button" href="#">역사</a>
-                <a class="filter-button" href="#">예술</a>
-                <a class="filter-button" href="#">인문</a>
-                <a class="filter-button" href="#">인물</a>
-                <a class="filter-button" href="#">자기계발</a>
-                <a class="filter-button" href="#">자연과학</a>
-                <a class="filter-button" href="#">잡지</a>
-                <a class="filter-button" href="#">종교</a>
-                <a class="filter-button" href="#">청소년</a>
+                <a class="filter-button all" href="#">전체</a>
+                <a class="filter-button social" href="#">사회/정치</a>
+                <a class="filter-button poetry" href="#">소설/시/희곡</a>
+                <a class="filter-button children" href="#">어린이</a>
+                <a class="filter-button trip" href="#">여행</a>
+                <a class="filter-button history" href="#">역사</a>
+                <a class="filter-button art" href="#">예술</a>
+                <a class="filter-button liberal" href="#">인문</a>
+                <a class="filter-button human" href="#">인물</a>
+                <a class="filter-button self-improvement" href="#">자기계발</a>
+                <a class="filter-button natural" href="#">자연과학</a>
+                <a class="filter-button magazine" href="#">잡지</a>
+                <a class="filter-button religion" href="#">종교</a>
+                <a class="filter-button teenager" href="#">청소년</a>
             </div>
         </div>
         <div class="bookreview-content">
-            <div>
-                <div></div>
-                <div></div>
+            <div class="btn-content">
+                <div class="pagination">
+                    <button class="pagination-btn">1</button>
+                    
+                </div>
+                <div class="review-create">
+                    <a class="review-create-btn" href="#">서평등록</a>
+                </div>
             </div>
-            <div></div>
+            <div class="reviewlist-content">
+                <table>
+                    <colgroup>
+                        <col style="width: 60px;">
+                        <col style="width: 120px;">
+                        <col style="width: 450px;">
+                        <col style="width: 180px;">
+                        <col style="width: 120px;">
+                        <col style="width: 100px;">
+                    </colgroup>
+                    <thead>
+                        <th>번호</th>
+                        <th>카테고리</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>작성일자</th>
+                        <th>조회수</th>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
       </div>
     </section>
@@ -73,5 +101,6 @@
       <p>&copy; 2023, joongo-readers. All rights reserved.</p>
     </footer>
     <script type="module" src="../js/authorized.js"></script>
+    <script type="module" src="../js/bookreview.js"></script>
   </body>
 </html>
