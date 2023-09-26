@@ -31,6 +31,15 @@ window.onload = async function bookList() {
 
       let saleConditionClass = ''; // 판매 조건에 따른 클래스 이름을 저장하기 위한 변수
 
+      // 로그인한 유저만 상세페이지로 넘어갈 수 있도록 설정
+      let bookDetailAddress = '';
+
+      if (!access) {
+        bookDetailAddress = "../html/login.html"
+      } else {
+        bookDetailAddress = "../html/bookdetail.html?id="+ bookData.id + "/"
+      }
+
       // 판매 조건에 따라 클래스 이름 설정
       switch (bookData.sale_condition_display) {
         case '판매중':
@@ -67,7 +76,7 @@ window.onload = async function bookList() {
         <li class="selling-price">판매가 : ${bookData.selling_price}원</li>
         
       </ul>
-      <a class="check-item" href="${frontend}/assets/html/bookdetail.html?id=${bookData.id}/">상품 확인하기</a>
+      <a class="check-item" href="${bookDetailAddress}">상품 확인하기</a>
       </div>
       `;
 
