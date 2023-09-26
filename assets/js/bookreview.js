@@ -1,4 +1,5 @@
 import { backend } from "./url.js";
+import { frontend } from "./url.js";
 
 window.onload = async function bookReviewList() {
   let curPage = 1;
@@ -27,7 +28,7 @@ window.onload = async function bookReviewList() {
         <td>${bookData.id}</td>
         <td>${bookData.category}</td>
         <td>
-            <p class="review-book-title"><a href="#">${bookData.review_title}</a></p>
+            <p class="review-book-title"><a href="${frontend}/assets/html/bookReviewDetail.html?id=${bookData.id}">${bookData.review_title}</a></p>
             <div class="review-book-hashtag">
               <p>#Django</p>
               <p>#Django</p>
