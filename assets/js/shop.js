@@ -2,6 +2,7 @@ import { backend } from "./url.js";
 import { frontend } from "./url.js";
 
 window.onload = async function bookList() {
+  const access = localStorage.getItem('access_token');
   let currentPage = 1;
   let response_json;
 
@@ -116,6 +117,18 @@ window.onload = async function bookList() {
 
   // 초기 로드에서 첫번째 페이지 불러오기
   fetchBooks(currentPage);
+
+  // 상품 등록 button event
+  const createBookButton = document.querySelector('.update-btn');
+  if(!access) {
+    createBookButton.addEventListener('click', () => {
+      location.href = "../html/login.html";
+    })
+  } else {
+    createBookButton.addEventListener('click', () => {
+      location.href = "../html/createPost.html";
+    })
+  }
 
   // filter-btn 전체
   document.querySelector('.filter-button-all').addEventListener('click', () => {
