@@ -16,6 +16,10 @@ export const apiResponse = (prompt) => {
     .then((res) => {
       if (res.status === 200) {
         return res.json();
+      } else if (res.status === 401) {
+        alert('로그인한 유저만 사용 가능합니다!');
+        window.location.replace(frontend + '/assets/html/login.html');
+        throw new Error('Unauthorized!');
       } else if (res.status === 429) {
         alert('하루에 2번만 AI chatbot recommend를 이용할 수 있습니다.');
         throw new Error('요청 제한 초과');
