@@ -1,0 +1,100 @@
+section{
+    width: 1000px;
+    margin: 120px auto;
+    font-family: inherit;
+}
+
+h1{
+font-size: 60px;
+}
+
+a {
+text-decoration: none;
+color: black;
+}
+
+  /* bookreview-title --------------- */
+
+.bookreview-titlebox {
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid #449fb1;
+    border-radius: 3px;
+    display: flex;
+}
+
+.bookreview-title-info {
+    width: 87%;
+}
+
+.bookreview-title-info > h2 {
+    margin-bottom: 10px;
+}
+
+.bookreview-content-info {
+    display: flex;
+}
+
+.bookreview-content-info > p {
+    margin-right: 25px;
+}
+
+.bookreview-content-btn{
+    width: 13%;
+}
+
+.bookreview-content-btn > button {
+    padding: 5px 15px;
+    margin-top: 30px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #449fb1;
+    color: white;
+    cursor: pointer;
+}
+
+.bookreview-content-btn > button:hover {
+    background-color: #337a88;
+}
+
+.bookreview-content {
+    padding: 10px;
+}
+
+.bookreview-hashtag {
+    display: flex;
+}
+
+.bookreview-hashtag > p {
+    padding: 5px 18px;
+    border: 1px solid rgb(88, 88, 88);
+    border-radius: 10px;
+    color: rgb(165, 165, 165);
+    margin: 10px 20px 10px 0;
+}
+
+.bookreview-hashtag > p a:hover {
+    color: rgb(109, 109, 248);
+}
+
+.bookreview-hashtag-info {
+    margin: 0 0 10px 5px;
+}
+
+.bookreview-content-bookinfo {
+    margin-top: 25px;
+}
+
+.bookreview-content-bookinfo > h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.bookreview-content-bookinfo > p {
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 18px;
+    min-height: 20em;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
