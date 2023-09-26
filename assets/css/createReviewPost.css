@@ -1,0 +1,14 @@
+section{
+    width: 1000px;
+    margin: 120px auto;
+    font-family: inherit;
+  }
+  
+  h1{
+    font-size: 60px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
