@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/createReviewPost.css">
+    <title>메인 화면</title>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <nav>
+        <div class="nav-container">
+          <a href="../html/authenticationView.html">
+            <img class="logo" src="../img/books.png" alt="logo" />
+          </a>
+          <div class="menu-container">
+            <ul class="menu">
+              <li><a href="../html/login.html">Login</a></li>
+              <li><a href="../html/signup.html">Sign Up</a></li>
+            </ul>
+            <ul class="menu before"></ul>
+            <ul class="menu2">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="../html/shop.html">Shop</a></li>
+              <li><a href="../html/search.html">Search</a></li>
+              <li><a href="../html/recommend.html">Recommend</a></li>
+              <li><a href="../html/bookReviewList.html">Review</a></li>
+              <li><a href="../html/aboutUs.html">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section>
+        <div class="bookreview-title-content">
+          <h1>Review</h1>
+          <p>가장 기억에 남은 책에 대한 서평을 남겨주세요.</p>
+        </div>
+        <div class="bookreview-create-content">
+          <form>
+            <div class="bookreview-category">
+              <label for="bookreview-category">카테고리</label>
+              <select name="bookreview-category" id="bookreview-category"></select>
+            </div>
+            <div class="bookreview-booktitle">
+              <label for="bookreview-booktitle">책 제목</label>
+              <input type="text">
+            </div>
+            <div class="bookreview-author">
+              <label class="bookreview-author">책 저자</label>
+              <input type="text">
+            </div>
+            <div class="bookreview-publisher">
+              <label for="bookreview-publisher">출판사</label>
+              <input type="text">
+            </div>
+            <div class="bookreview-rating">
+              <label for="bookreview-rating">평점</label>
+              <input type="text">
+            </div>
+            <div>
+              <label for="bookreview-textarea">내용</label>
+              <textarea name="bookreview-textarea" id="bookreview-textarea"></textarea>
+            </div>
+            <div class="bookreview-hashtag">
+              <label for="bookreview-hashtag">해시태그</label>
+              <input type="text">
+              <button>추가</button>
+            </div>
+            <div class="bookreview-button">
+              <p>▲ 해시태그는 책 제목, 저자, 출판사명을 태그해주세요.</p>
+              <div class="create-button">
+                <button type="reset">초기화</button>
+                <button>등록</button>
+              </div>
+            </div>
+          </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2023, joongo-readers. All rights reserved.</p>
+    </footer>
+    <script type="module" src="../js/authorized.js"></script>
+    <script type="module" src="../js/createReviewPost.js"></script>
+  </body>
+</html>
