@@ -12,3 +12,45 @@ section{
     text-decoration: none;
     color: black;
   }
+
+  
+  label {
+    font-size: 20px;
+  }
+
+  input {
+    width: 500px;
+  }
+
+  textarea {
+    width: 500px;
+    height: 300px;
+    resize: none;
+  }
+
+  /* content ------------------------------- */
+
+  .bookreview-create-content {
+    margin-top: 10px;
+  }
+
+  .bookreview-button {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bookreview-hashtag > button {
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #449fb1;
+    color: white;
+  }
+
+  .create-button > button {
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #449fb1;
+    color: white;
+  }
