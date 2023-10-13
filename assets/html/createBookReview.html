@@ -42,35 +42,52 @@
         </div>
         <div class="bookreview-create-content">
           <form>
-            <div class="bookreview-category">
-              <label for="bookreview-category">카테고리</label>
-              <select name="bookreview-category" id="bookreview-category"></select>
-            </div>
-            <div class="bookreview-booktitle">
-              <label for="bookreview-booktitle">책 제목</label>
-              <input type="text">
-            </div>
-            <div class="bookreview-author">
-              <label class="bookreview-author">책 저자</label>
-              <input type="text">
-            </div>
-            <div class="bookreview-publisher">
-              <label for="bookreview-publisher">출판사</label>
-              <input type="text">
-            </div>
-            <div class="bookreview-rating">
-              <label for="bookreview-rating">평점</label>
-              <input type="text">
-            </div>
-            <div>
-              <label for="bookreview-textarea">내용</label>
-              <textarea name="bookreview-textarea" id="bookreview-textarea"></textarea>
-            </div>
-            <div class="bookreview-hashtag">
-              <label for="bookreview-hashtag">해시태그</label>
-              <input type="text">
-              <button>추가</button>
-            </div>
+            <ul class="bookreview-category">
+              <li for="bookreview-category">카테고리</li>
+              <li>
+                <select name="bookreview-category" id="bookreview-category">
+                  <option selected>선택하세요.</option>
+                  <option value="사회/정치">사회/정치</option>
+                  <option value="소설/시/희곡">소설/시/희곡</option>
+                  <option value="어린이">어린이</option>
+                  <option value="여행">여행</option>
+                  <option value="역사">역사</option>
+                  <option value="예술">예술</option>
+                  <option value="인문">인문</option>
+                  <option value="인물">인물</option>
+                  <option value="자기계발">자기계발</option>
+                  <option value="자연과학">자연과학</option>
+                  <option value="잡지">잡지</option>
+                  <option value="종교">종교</option>
+                  <option value="청소년">청소년</option>
+                </select>
+              </li>
+            </ul>
+            <ul class="bookreview-booktitle">
+              <li for="bookreview-booktitle">책 제목</li>
+              <li><input type="text"></li>
+            </ul>
+            <ul class="bookreview-author">
+              <li class="bookreview-author">책 저자</li>
+              <li><input type="text"></li>
+            </ul>
+            <ul class="bookreview-publisher">
+              <li for="bookreview-publisher">출판사</li>
+              <li><input type="text"></li>
+            </ul>
+            <ul class="bookreview-rating">
+              <li for="bookreview-rating">평점</li>
+              <li><input type="number"></li>
+            </ul>
+            <ul>
+              <li for="bookreview-textarea">내용</li>
+              <li><textarea name="bookreview-textarea" id="bookreview-</li>textarea"></textarea>
+            </ul>
+            <ul class="bookreview-hashtag">
+              <li for="bookreview-hashtag">해시태그</li>
+              <li><input class="bookreview-hashtag-text" type="text"></li>
+              <li><button class="bookreview-hashtag-btn">추가</button></li>
+            </ul>
             <div class="bookreview-button">
               <p>▲ 해시태그는 책 제목, 저자, 출판사명을 태그해주세요.</p>
               <div class="create-button">
