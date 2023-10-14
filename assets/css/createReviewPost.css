@@ -7,13 +7,6 @@ section{
 ul, li {
   text-decoration: none;
   list-style: none;
-  display: flex;
-  margin-bottom: 5px;
-}
-
-li:nth-child(1) {
-  width: 80px;
-  font-weight: bold;
 }
 
 h1{
@@ -45,6 +38,18 @@ textarea {
 
 /* content ------------------------------- */
 
+.bookreview-create-content form ul {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+
+.bookreview-create-content form ul li:nth-child(1) {
+  width: 80px;
+  font-weight: bold;
+}
+
+
 .bookreview-create-content {
   margin-top: 10px;
 }
@@ -64,6 +69,11 @@ textarea {
   padding: 5px 10px;
   background-color: #449fb1;
   color: white;
+  cursor: pointer;
+}
+
+.bookreview-hashtag-btn:hover {
+  background-color: #337583;
 }
 
 .create-button > button {
@@ -72,4 +82,9 @@ textarea {
   padding: 5px 10px;
   background-color: #449fb1;
   color: white;
+  cursor: pointer;
+}
+
+.create-button > button:hover {
+  background-color: #337583;
 }

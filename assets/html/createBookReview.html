@@ -42,6 +42,14 @@
         </div>
         <div class="bookreview-create-content">
           <form>
+            <ul class="bookreview-title">
+              <li for="bookreview-title">서평 제목</li>
+              <li><input type="text" id="bookreview-title"></li>
+            </ul>
+            <ul>
+              <li for="bookreview-textarea">내용</li>
+              <li><textarea name="bookreview-textarea" id="bookreview-textarea"></textarea></li>
+            </ul>
             <ul class="bookreview-category">
               <li for="bookreview-category">카테고리</li>
               <li>
@@ -65,23 +73,19 @@
             </ul>
             <ul class="bookreview-booktitle">
               <li for="bookreview-booktitle">책 제목</li>
-              <li><input type="text"></li>
+              <li><input type="text" id="bookreview-booktitle"></li>
             </ul>
             <ul class="bookreview-author">
               <li class="bookreview-author">책 저자</li>
-              <li><input type="text"></li>
+              <li><input type="text" id="bookreview-author"></li>
             </ul>
             <ul class="bookreview-publisher">
               <li for="bookreview-publisher">출판사</li>
-              <li><input type="text"></li>
+              <li><input type="text" id="bookreview-publisher"></li>
             </ul>
             <ul class="bookreview-rating">
               <li for="bookreview-rating">평점</li>
-              <li><input type="number"></li>
-            </ul>
-            <ul>
-              <li for="bookreview-textarea">내용</li>
-              <li><textarea name="bookreview-textarea" id="bookreview-</li>textarea"></textarea>
+              <li><input type="number" id="bookreview-rating"></li>
             </ul>
             <ul class="bookreview-hashtag">
               <li for="bookreview-hashtag">해시태그</li>
@@ -92,7 +96,7 @@
               <p>▲ 해시태그는 책 제목, 저자, 출판사명을 태그해주세요.</p>
               <div class="create-button">
                 <button type="reset">초기화</button>
-                <button>등록</button>
+                <button id="create-ReviewBtn">등록</button>
               </div>
             </div>
           </form>
