@@ -6,9 +6,19 @@ window.onload = async function bookReviewList() {
   let curPage = 1;
   let response_json;
 
+
+  // 해시태그 정보 가져오기
+  async function fetchHashTag(bookreview_id) {
+    const response = await fetch(backend + `/bookreview/${bookreview_id}/hashtag/`, {method: 'GET'})
+    const hashTagData = await response.json();
+    console.log(hashTagData);
+    return hashTagData;
+  }
+
   async function fetchBookReviewList(page) {
     const response = await fetch(backend + '/bookreview/list/?page=' + page, {method: 'GET'})
     response_json = await response.json()
+    console.log(response_json);
 
     const bookreview_list = document.querySelector('tbody');
     bookreview_list.innerHTML = '';
@@ -25,16 +35,24 @@ window.onload = async function bookReviewList() {
     for (let bookData of response_json.results) {
       let bookreview = document.createElement('tr');
 
+      // 해시태그 데이터
+      let hashTags = await fetchHashTag(bookData.id);
+
+      let hashtagDiv = document.createElement("div");
+      hashtagDiv.className = "review-book-hashtag";
+
+      for(let i=0; i<hashTags.length; i++){
+        let p=document.createElement("p");
+        p.textContent=`#${hashTags[i].tagname}`;
+        hashtagDiv.appendChild(p);
+      }
+
       bookreview.innerHTML = `
         <td>${bookData.id}</td>
         <td>${bookData.category}</td>
         <td>
-            <p class="review-book-title"><a href="${frontend}/assets/html/bookReviewDetail.html?id=${bookData.id}">${bookData.review_title}</a></p>
-            <div class="review-book-hashtag">
-              <p>#Django</p>
-              <p>#Django</p>
-              <p>#Django</p>
-            </div>
+        <p class="review-book-title"><a href="${frontend}/assets/html/bookReviewDetail.html?id=${bookData.id}">${bookData.review_title}</a></p>
+        ${hashtagDiv.outerHTML}
         </td>
         <td>${bookData.writer_nickname}</td>
         <td>${bookData.created_at}</td>
