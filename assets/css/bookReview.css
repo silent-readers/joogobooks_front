@@ -148,3 +148,62 @@ tbody tr td:nth-child(3) {
   border-radius: 10px;
   color: rgb(160, 158, 158);
 }
+
+/* page_nation */
+.pagination {
+  display: inline-block;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination .none {
+  display: none;
+}
+
+.pagination button {
+  display: block;
+  margin: 0 3px;
+  float: left;
+  border: 1px solid #e6e6e6;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 13px;
+  color: #999999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pagination .arrow {
+  border: 1px solid #ccc;
+}
+
+.pagination .pprev {
+  background: #f8f8f8 url("../img/page_pprev.png") no-repeat center center;
+  margin-left: 0;
+}
+
+.prev {
+  background: #f8f8f8 url("../img/page_prev.png") no-repeat center center;
+  margin-right: 7px;
+}
+
+.pagination .next {
+  background: #f8f8f8 url("../img/page_next.png") no-repeat center center;
+  margin-left: 7px;
+}
+
+.pagination .nnext {
+  background: #f8f8f8 url("../img/page_nnext.png") no-repeat center center;
+  margin-right: 0;
+}
+
+.pagination a.active {
+  background-color: #42454c;
+  color: #fff;
+  border: 1px solid #42454c;
+}

@@ -38,13 +38,13 @@ textarea {
 
 /* content ------------------------------- */
 
-.bookreview-create-content form ul {
+.bookreview-create-content ul {
   display: flex;
   margin-bottom: 5px;
 }
 
 
-.bookreview-create-content form ul li:nth-child(1) {
+.bookreview-create-content ul li:nth-child(1) {
   width: 80px;
   font-weight: bold;
 }
@@ -87,4 +87,23 @@ textarea {
 
 .create-button > button:hover {
   background-color: #337583;
+}
+
+.hashtag-li {
+  border: 0px;
+  border-radius: 7px;
+  padding: 2px 5px;
+  font-size: 13px;
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
+.hashtag-del-btn {
+  border: 0px;
+  border-radius: 10px;
+  padding: 2px 5px;
+  background-color: #449fb1;
+  cursor: pointer;
+  color: white;
+  margin-left: 5px;
 }
