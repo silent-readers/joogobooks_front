@@ -29,6 +29,7 @@ btn_login.addEventListener('click', async function(e) {
 
     const access_token = res.token.access
     localStorage.setItem('access_token', access_token)
+    localStorage.setItem('refresh_token', res.token.refresh)
 
     const base64Url = access_token.split('.')[1];
     const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');

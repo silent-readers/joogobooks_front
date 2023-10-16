@@ -1,9 +1,13 @@
 import { backend } from "./url.js";
+import { refreshToken } from "./token.js";
+import { forTokenWhenClosing } from "./token.js"
 
 const active_ul = document.getElementsByClassName('menu');
 
 const payload = localStorage.getItem('payload');
 const parsed_payload = JSON.parse(payload);
+
+forTokenWhenClosing();
 
 if (!parsed_payload) {
     main_btn.addEventListener('click', (e) => {
@@ -30,6 +34,7 @@ if (!parsed_payload) {
             <li><button type="button" id="logout-btn">Logout</button></li>
         </ul>
     `
+    refreshToken();
 
     const logout_btn = document.getElementById('logout-btn');
     logout_btn.addEventListener('click', () => {
