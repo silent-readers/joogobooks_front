@@ -13,11 +13,10 @@ export function refreshToken() {
             const response = await fetch(url ,{
                 headers: {
                     'Content-type' : 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('refresh_token')}`
                 },
                 method:'POST',
-                body:JSON.stringify({
-                    'refresh_token':localStorage.getItem('refresh_token')
-                }),
+                body:JSON.stringify({}),
             });
             return response.json();
         };
@@ -26,15 +25,23 @@ export function refreshToken() {
         requestRefreshToken(`${backend}/api/user/auth/refresh/`).then((data) => {
             // 새롭게 발급 받은 accessToken을 localStorage에 저장
             const accessToken = data.access;
-            localStorage.setItem('access_token', accessToken);
-            
-            const base64Url = access_token.split('.')[1];
-            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
+            const refreshToken = data.refresh;
 
-            localStorage.setItem("payload", jsonPayload);
+            if (accessToken && refreshToken) {
+                localStorage.setItem('access_token', accessToken);
+                lacalStorage.setItem('refresh_token', refreshToken);
+
+                const base64Url = accessToken.split('.')[1];
+                const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+
+                localStorage.setItem("payload", jsonPayload);
+            } else {
+                // refresh token이 없으면 로그인 페이지로 이동
+                location.href="../html/login.html";
+            }
         });
     }
 };
@@ -109,8 +116,8 @@ export const forTokenWhenClosing = () => {
     // toDoWhenClosing 함수를 통해 window가 닫히면 토큰 관련 값 전부 삭제
     const toDoWhenClosing = function () {
         localStorage.removeItem("payload")
-        localStorage.removeItem("access")
-        localStorage.removeItem("refresh")
+        localStorage.removeItem("access_token")
+        localStorage.removeItem("refresh_token")
         return;
     };
 
