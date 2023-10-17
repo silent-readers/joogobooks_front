@@ -25,36 +25,58 @@ window.onload = async function() {
     async function fetchHashTag(bookId) {
         const response = await fetch(backend + `/bookreview/${bookId}/hashtag/`, {method: 'GET'})
         const hashTagData = await response.json();
-        console.log(hashTagData);
-        return hashTagData;
+
+        // 해시태그 ID 추출
+        const hashTagIds = hashTagData.map(tag => tag.id);
+
+        return hashTagIds && hashTagData;
     }
 
     // 해시태그 데이터
+    let hashTagIds = await fetchHashTag(bookData.id);
     let hashTags = await fetchHashTag(bookData.id);
 
-    
-
-    function createHashTagElement(tagname) {
+    function createHashTagElement(tagname, tagId) {
         let hashtagLi = document.createElement('li');
         hashtagLi.classList.add('hashtag-li');
-        hashtagLi.textContent=`#${tagname}`;
+        hashtagLi.textContent = `#${tagname}`;
     
         let removeButton = document.createElement("button");
         removeButton.classList.add('hashtag-del-btn');
         removeButton.textContent = "x";
         
-        removeButton.addEventListener("click", function(e) {
+        // 데이터 속성을 통해 해시태그의 id 저장
+        removeButton.setAttribute("data-id", tagId);
+
+        removeButton.addEventListener("click", async function(e) {
             e.preventDefault();
-            this.parentNode.remove();
+
+            // 데이터 속성에서 해시태그의 id 가져오기
+            const hashTagId = this.getAttribute("data-id");
+
+            // 서버에 삭제 요청 보내기
+            const deleteResponse = await fetch(backend + `/bookreview/hashtag/${hashTagId}/delete/`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${access_token}`,
+                    "Content-type": "application/json",
+                }
+            });
+
+            if (deleteResponse.ok) {
+                // 삭제가 성공하면 해당 해시태그를 화면에서 삭제
+                this.parentNode.remove();
+                alert("해시태그가 삭제되었습니다.");
+            } else {
+                // 삭제에 실패한 경우에 대한 처리
+                alert("해시태그 삭제에 실패했습니다.");
+            }
         });
     
         hashtagLi.appendChild(removeButton);
         
         return hashtagLi;
     }
-    
-    
-
     
     const bookDetailsession = document.querySelector('section');
 
@@ -130,7 +152,117 @@ window.onload = async function() {
     const hashtagUl = document.getElementById('hashtag-ul');
 
     for(let i=0; i<hashTags.length; i++){
-        const tagElement = createHashTagElement(hashTags[i].tagname);
+        const tagElement = createHashTagElement(hashTags[i].tagname, hashTags[i].id);
         hashtagUl.appendChild(tagElement);
-     }
+    }
+
+    
+    // bookreview update하기
+    let updateHashTagData =[];
+
+    // 해시태그 등록
+    const hashtagBtn = document.getElementById('bookreview-hashtag-btn');
+    hashtagBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const hashtagtext = document.getElementById('bookreview-hashtag-text').value;
+
+        // 중복된 해시태그 체크
+        if (updateHashTagData.includes(hashtagtext)) {
+            alert('이미 추가된 해시태그입니다.');
+            return;
+        }
+
+        const hashtagUl = document.getElementById('hashtag-ul');
+        const hashtagLi = document.createElement('li');
+        hashtagLi.classList.add('hashtag-li');
+
+        let removeButton = document.createElement("button");
+        removeButton.classList.add('hashtag-del-btn');
+        removeButton.textContent = "x";
+        removeButton.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            let index = updateHashTagData.indexOf(hashtagtext);
+            if (index !== -1) updateHashTagData.splice(index, 1);
+            
+            this.parentNode.remove();
+        });
+
+        updateHashTagData.push(hashtagtext);
+
+        hashtagLi.appendChild(document.createTextNode(hashtagtext));
+        hashtagLi.appendChild(removeButton);
+        hashtagUl.appendChild(hashtagLi);
+    })
+
+    // 해시태그를 포함한 서평정보 등록
+    const updateReviewBtn = document.getElementById('update-ReviewBtn');
+
+    updateReviewBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
+
+        const date = new Date().toISOString();
+
+        const updateBookreviewData = {
+            "review_title" : document.getElementById('bookreview-title').value,
+            "review" : document.getElementById('bookreview-textarea').value,
+            "category" : document.getElementById('bookreview-category').value,
+            "book_title" : document.getElementById('bookreview-booktitle').value,
+            "book_author" : document.getElementById('bookreview-author').value,
+            "book_publisher" : document.getElementById('bookreview-publisher').value,
+            "rating" : document.getElementById('bookreview-rating').value,
+            "created_at" : date,
+        }
+
+        const response = await fetch(backend + `/bookreview/${bookId}/update/`, {
+            headers: {
+                "Content-type": "application/json",
+                'Authorization': `Bearer ${access_token}`
+            },
+            method: 'PUT',
+            body:JSON.stringify(updateBookreviewData)
+        }).then((res) => {
+            if (!res.ok) {
+            return res.json().then(err => { throw err });
+            }
+            return res;
+        })
+        .then((res) => {
+            console.log(res.status);
+            return res;
+        })
+        .then((data) => {
+            if (data) {
+            alert("서평 정보 수정이 완료되었습니다.");
+            console.log("성공적으로 데이터가 전송되었습니다.");
+
+            // Create hashtags for this review.
+            for(let i=0; i<updateHashTagData.length; i++){
+                let hash_tag_data={
+                    "tagname":updateHashTagData[i]
+                }
+                fetch(backend + `/bookreview/${data.id}/hashtag/create/`,{
+                    headers:{
+                        "Content-type": "application/json",
+                        'Authorization': `Bearer ${access_token}`
+                    },
+                    method:'POST',
+                    body:JSON.stringify(hash_tag_data)
+                })
+            }
+
+            window.location.replace(frontend + '/assets/html/bookReviewList.html')
+            } else {
+            alert("서평 등록에 실패했습니다.");
+            console.log("데이터 전송 중 오류가 발생했습니다.");
+            }
+        })
+        .catch((error) => {
+            alert(error.message || "오류가 발생했습니다.");
+            console.error(error)
+        });
+
+    })
+
 }
