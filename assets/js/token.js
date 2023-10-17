@@ -5,7 +5,7 @@ export function refreshToken() {
     const payload = JSON.parse(localStorage.getItem('payload'));
     
     // 아직 access token의 인가 유효시간이 남은 경우
-    if (payload.exp > (Date.now() / 1000)) {
+    if (payload.exp > Math.floor(Date.now() / 1000)) { // 수정: Date.now()의 결과를 초 단위로 변환
         return;
     } else {
         // 인증시간이 지났기 때문에 다시 refresh token으로 access token 요청
@@ -29,7 +29,7 @@ export function refreshToken() {
 
             if (accessToken && refreshToken) {
                 localStorage.setItem('access_token', accessToken);
-                lacalStorage.setItem('refresh_token', refreshToken);
+                localStorage.setItem('refresh_token', refreshToken);
 
                 const base64Url = accessToken.split('.')[1];
                 const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -45,7 +45,6 @@ export function refreshToken() {
         });
     }
 };
-
 
 export const forTokenWhenClosing = () => {
     // 브라우저 종료 시 로그인한 유저의 토큰값 로컬 스토리지에서 삭제
