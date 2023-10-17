@@ -1,0 +1,109 @@
+section{
+    width: 800px;
+    margin: 120px auto;
+    font-family: inherit;
+  }
+  
+  ul, li {
+    text-decoration: none;
+    list-style: none;
+  }
+  
+  h1{
+    font-size: 60px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  
+  label {
+    padding-right: 10px;
+    font-size: 20px;
+  }
+  
+  input {
+    width: 500px;
+    padding: 5px;
+  }
+  
+  textarea {
+    padding: 5px;
+    width: 700px;
+    height: 300px;
+    resize: none;
+  }
+  
+  /* content ------------------------------- */
+  
+  .bookreview-create-content ul {
+    display: flex;
+    margin-bottom: 5px;
+  }
+  
+  
+  .bookreview-create-content ul li:nth-child(1) {
+    width: 80px;
+    font-weight: bold;
+  }
+  
+  
+  .bookreview-create-content {
+    margin-top: 10px;
+  }
+  
+  .bookreview-button {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .bookreview-hashtag-text {
+    width: 200px; margin-right: 10px;
+  }
+  
+  .bookreview-hashtag-btn {
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #449fb1;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .bookreview-hashtag-btn:hover {
+    background-color: #337583;
+  }
+  
+  .create-button > button {
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #449fb1;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .create-button > button:hover {
+    background-color: #337583;
+  }
+  
+  .hashtag-li {
+    border: 0px;
+    border-radius: 7px;
+    padding: 2px 5px;
+    font-size: 13px;
+    margin-left: 5px;
+    margin-top: 3px;
+  }
+  
+  .hashtag-del-btn {
+    border: 0px;
+    border-radius: 10px;
+    padding: 2px 5px;
+    background-color: #449fb1;
+    cursor: pointer;
+    color: white;
+    margin-left: 5px;
+  }
